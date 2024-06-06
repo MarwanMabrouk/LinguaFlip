@@ -67,3 +67,17 @@ userSchema.statics.signup = async function(email, password) {
 
 module.exports = mongoose.model('User', userSchema);
 
+/* 
+Using JSON Web Tokens is one way to manage authentication between frontend and backend of a web app
+It involves making a special token called json web token on the server when a user sends a successful
+signup or login request to the server.
+So the server handles that requests and if it's okay with the credentials then it will create a json web 
+token for that user and it will then send that token back to the client
+The presence of that token on the browser would signify to the frontend application that we are currently
+logged in or authenticated.
+
+A toke is composed of:
+- Header: contains the algorith used for the JWT
+- Payload: contains non-sensitive user data (e.g.:user id)
+- Signature: used to verify the token by the server
+*/
