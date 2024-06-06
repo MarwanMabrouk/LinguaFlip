@@ -10,6 +10,8 @@ import RecordList from "./components/RecordList";
 import "./index.css";
 
 import { AuthContextProvider } from "./context/AuthContext";
+import Login from "./pages/login";
+import Signup from "./pages/signup";
 
 const router = createBrowserRouter([
   {
@@ -41,7 +43,14 @@ const router = createBrowserRouter([
         element: <Record />,
       },
     ],
+  },{
+    path:"/login",
+    element:<Login />
   },
+  {
+    path:"/signup",
+    element:<Signup />
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
