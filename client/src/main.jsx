@@ -9,6 +9,8 @@ import Record from "./components/Record";
 import RecordList from "./components/RecordList";
 import "./index.css";
 
+import { AuthContextProvider } from "./context/AuthContext";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -44,6 +46,9 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthContextProvider>
+      <RouterProvider router={router} />
+    </AuthContextProvider>
+   
   </React.StrictMode>
 );
