@@ -1,5 +1,7 @@
 const mongoose = require ('moongoose');
 const bcrypt=require('bcrypt');
+const validator = require('validator');
+// i have install the validator package npm install validator
 
 const Schema = mongoose.Schema;
 
@@ -25,6 +27,19 @@ const userSchema = new Schema({
 
 // static signup method
 userSchema.statics.signup = async function(email, password) {
+
+    // validation
+    // first meake sure that we have a value in email and password
+
+    if(!email || !password){
+        throw Error('All fields must be filled');
+    }
+    if(!validator.isEmail(email)){
+        throw Error('Email is not valid');
+    }
+    if(!validator.isStrongPassword(password)){
+        throw Error('Password is not strong enough');
+    }
 
     // check if they user already exists in the db
 
