@@ -16,6 +16,14 @@ export const AuthContextProvider = ({children}) =>{
         user:null
     });
 
+    useEffect(() =>{
+        const user = JSON.parse(localStorage.getItem('user'));
+        if(user){
+            dispatch({type:'LOGIN', payload: user});
+        }
+     }, []); // when the component first render
+    // making that check for the token in the local storage
+
     console.log('AuthContext state: ', state);
 
     return (
