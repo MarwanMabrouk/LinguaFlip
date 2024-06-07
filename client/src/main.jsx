@@ -1,9 +1,11 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
+import { useAuthContext } from "./hooks/useAuthContext";
 
 import {
   createBrowserRouter,
   RouterProvider,
+  Navigate
 } from "react-router-dom";
 import App from "./App";
 import Record from "./components/Record";
@@ -13,6 +15,9 @@ import "./index.css";
 import { AuthContextProvider } from "./context/AuthContext";
 import Login from "./pages/login";
 import Signup from "./pages/signup";
+
+const {user} = useAuthContext();
+
 
 const router = createBrowserRouter([
   {
