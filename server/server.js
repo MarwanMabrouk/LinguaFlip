@@ -1,10 +1,10 @@
 import express from "express";
 import cors from "cors";
 import records from "./routes/record.js";
+import {userRoutes} from './routes/user.js';
 
 const PORT = process.env.PORT || 5050;
 const app = express();
-const userRoutes = require('./routes/user');
 
 //routes
 app.use(cors());

@@ -1,11 +1,11 @@
-const mongoose = require ('moongoose');
-const bcrypt=require('bcrypt');
-const validator = require('validator');
+import mongoose from 'mongoose';
+import bcrypt from 'bcrypt';
+import validator from 'validator';
 // i have install the validator package npm install validator
 
 const Schema = mongoose.Schema;
 
-const userSchema = new Schema({
+export const userSchema = new Schema({
 
     email:{
         type:String,
@@ -85,7 +85,7 @@ userSchema.statics.login = async function (email, password){
     return user
 }
 
-module.exports = mongoose.model('User', userSchema);
+// module.exports = mongoose.model('User', userSchema);
 
 /* 
 Using JSON Web Tokens is one way to manage authentication between frontend and backend of a web app

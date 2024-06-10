@@ -1,7 +1,8 @@
-const jwt = require('jsonwebtoken');
-const User = require ('../models/userModel');
+import jwt from 'jsonwebtoken';
+import {userSchema} from '../models/userModel.js';
 
-const requireAuth= async (req, res, next) =>{
+const User = userSchema;
+export const requireAuth= async (req, res, next) =>{
     // verify that the user is authenticated
     const {authorization }= req.headers;
     if(!authorization){
@@ -21,8 +22,6 @@ const requireAuth= async (req, res, next) =>{
         res.status(401).json({error: 'Request is not authorized'});
     }
 }
-
-module.exports = requireAuth; 
 
 // Import it later in routes/record
 // const requireAuth = require ('../middleware/requireAuth.js')

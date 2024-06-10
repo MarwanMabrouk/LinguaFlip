@@ -1,10 +1,9 @@
 
-const User = require('../models/userModel');
+import {userSchema} from '../models/userModel.js';
+const User = userSchema;
 
 // I have installed npm install jsonwebtoken
-
-const jwt= require('jsonwebtoken');
-
+import jwt from 'jsonwebtoken';
 const createToken = (_id) =>{
     // the second argumnet schould be in a env file
     jwt.sign({_id:_id}, process.env.SECRET, {expiresIn: '3d'});
@@ -12,7 +11,7 @@ const createToken = (_id) =>{
 
 // login user
 
-const loginUser = async (req, res) => {
+export const loginUser = async (req, res) => {
 
     const {email, password} = req.body;
 
@@ -30,7 +29,7 @@ const loginUser = async (req, res) => {
 // signup user
 
 
-const signupUser = async (req, res) => {
+export const signupUser = async (req, res) => {
     const {email, password}=req.body;
 
     try{
@@ -43,5 +42,3 @@ const signupUser = async (req, res) => {
         res.status(400).json({error: error.message});
     }
 }
-
-module.exports = {signupUser, loginUser}

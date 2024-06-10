@@ -7,7 +7,7 @@ import db from "../db/connection.js";
 import { ObjectId } from "mongodb";
 
 //Import from middleware require Authentication
-const requireAuth = require ('../middleware/requireAuth.js')
+import { requireAuth } from "../middleware/requireAuth.js";
 
 // router is an instance of the express router.
 // We use it to define our routes.
