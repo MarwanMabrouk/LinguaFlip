@@ -1,8 +1,10 @@
 import express from "express";
 
+
 // contoller functions
 import {signupUser, loginUser} from '../controllers/userContoller.js';
 export const userRoutes = express.Router();
+
 
 // login route
 

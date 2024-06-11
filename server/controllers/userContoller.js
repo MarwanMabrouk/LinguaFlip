@@ -1,4 +1,4 @@
-
+import mongoose from 'mongoose';
 import {userSchema} from '../models/userModel.js';
 const User = userSchema;
 

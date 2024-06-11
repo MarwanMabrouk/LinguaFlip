@@ -10,7 +10,7 @@ export const useLogin = () => {
         setIsLoading(true);
         setError(null);
 
-        const response = await fetch('/user/login', { // i am not sure if the parameter is correct
+        const response = await fetch('/api/user/login', { // i am not sure if the parameter is correct
 
             method:'POST',
             headers:{'Content-Type': 'application/json'},
