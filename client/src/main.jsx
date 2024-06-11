@@ -64,7 +64,6 @@ root.render(
   <React.StrictMode>
      <AuthContextProvider>
       <App />
-      <h2>hola</h2>
     </AuthContextProvider> 
    
   </React.StrictMode>

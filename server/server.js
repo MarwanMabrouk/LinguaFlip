@@ -25,7 +25,6 @@ mongoose.connect(process.env.ATLAS_URI)
 });
   })
   .catch((error) =>{
-    console.log("holaaaa");
     console.log(error);
   })
 
