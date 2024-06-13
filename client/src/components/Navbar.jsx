@@ -12,8 +12,8 @@ export default function Navbar() {
     logout();
   }
   return (
-    <div>
-      <nav className="flex justify-between items-center mb-6">
+    <header className="nav">
+      <nav className="nav-links">
         <Link to="/">
           <img alt="MongoDB logo" className="h-10 inline" src="https://raw.githubusercontent.com/mongodb-developer/mern-stack-example/603144e25ba5549159d1962601337652a7bfa253/mern/client/src/assets/mongodb.svg"></img>
         </Link>
@@ -28,14 +28,16 @@ export default function Navbar() {
           </div>
         )}
         { !user && ( // when the user is not login show this
-          <div>
-            <Link to="/login">Login</Link>
-            <Link to="/signup">Signup</Link>
+          <div className="nav-links">
+             <Link to="/login">Login</Link>
+             <Link to="/signup">Signup</Link>
           </div>
-        )}
+           
+          
+)}
        
         
       </nav>
-    </div>
+    </header>
   );
 }
