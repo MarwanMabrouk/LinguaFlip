@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useSignup } from "../hooks/useSignup";
+import { Button } from "@mui/material";
 
 const Signup = () =>{
     const [email, setEmail] = useState('');
@@ -13,16 +14,16 @@ const Signup = () =>{
     
     return(
         <form className="signup" onSubmit ={handleSubmit}>
-            <h2 >Sign up</h2>
+            <h2>Sign up </h2>
             <div>
-                <label>Email:</label>
+                <label><h1>Email:</h1></label>
                 <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required/>
             </div>
             <div>
                 <label>Password:</label>
                 <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required/>
             </div>
-            <button disabled = {isLoading}>Signup</button>
+            <Button variant="contained" disabled = {isLoading}>Signup</Button>
             {error && <div className="error">{error}</div>}
         </form>
 

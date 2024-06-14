@@ -20,7 +20,7 @@ const App = () => {
     <div className="w-full p-6">
       <BrowserRouter>
         <Navbar />
-        <h2>Holaa</h2>
+
         <div>
           <Routes>
           <Route 
