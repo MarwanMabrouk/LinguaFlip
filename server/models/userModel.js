@@ -27,7 +27,7 @@ export const userSchema = new Schema({
 });
 
 // static signup method
-userSchema.statics.signup = async function(email, password) {
+userSchema.statics.signup = async function(email, password, nativeLanguage, foreignLanguage) {
 
     // validation
     // first meake sure that we have a value in email and password
@@ -61,7 +61,7 @@ userSchema.statics.signup = async function(email, password) {
 
     // store the email and password in the db
 
-    const user = await this.create({email, password: hash});
+    const user = await this.create({email, password: hash, nativeLanguage, foreignLanguage});
     return user;
 
 
