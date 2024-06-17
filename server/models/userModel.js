@@ -15,6 +15,14 @@ export const userSchema = new Schema({
     password:{
         type:String,
         required:true
+    },
+    nativeLanguage:{
+        type:String,
+        required:true
+    },
+    foreignLanguage:{
+        type:String,
+        required:true
     }
 });
 
@@ -24,7 +32,7 @@ userSchema.statics.signup = async function(email, password) {
     // validation
     // first meake sure that we have a value in email and password
 
-    if(!email || !password){
+    if(!email || !password || !nativeLanguage || !foreignLanguage){
         throw Error('All fields must be filled');
     }
     if(!validator.isEmail(email)){
@@ -33,6 +41,7 @@ userSchema.statics.signup = async function(email, password) {
     if(!validator.isStrongPassword(password)){
         throw Error('Password is not strong enough');
     }
+    
 
     // check if they user already exists in the db
 
