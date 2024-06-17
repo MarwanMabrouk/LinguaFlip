@@ -6,7 +6,7 @@ export const useSignup = () => {
     const [isLoading, setIsLoading] = useState(null); // is gonnan be true when we start the request
     const {dispatch} = useAuthContext();
 
-    const signup = async (email, password) => {
+    const signup = async (user) => {
         setIsLoading(true);
         setError(null);
 
@@ -14,7 +14,7 @@ export const useSignup = () => {
 
             method:'POST',
             headers:{'Content-Type': 'application/json'},
-            body:JSON.stringify({email, password})
+            body:JSON.stringify({user}) // i am not sure if it goes in brackets
         })  
 
         const json = await response.json();
