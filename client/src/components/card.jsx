@@ -16,26 +16,31 @@ export default function Card({title,sourceLanguage,targetLanguage}) {
     <FrontSide
       style={{
         backgroundColor: '#41669d',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: '100%', // Ensure the height is set so that the centering works correctly
-        textAlign: 'center' // This will center the text horizontally
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: '100%', // Ensure the height is set so that the centering works correctly
+    width: '300px', // Set the width of the card
+    textAlign: 'center', // This will center the text horizontally
+    borderRadius: '50px' // This will make the edges rounded
       }}
     >
-        <Typography> {sourceLanguage}</Typography>
+        <Typography style={{ fontSize: '24px' }}> {sourceLanguage}</Typography>
     </FrontSide>
     <BackSide
          style={{
         backgroundColor:'#175852' ,
         display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: '100%', // Ensure the height is set so that the centering works correctly
-        textAlign: 'center' // This will center the text horizontally
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: '100%', // Ensure the height is set so that the centering works correctly
+    width: '300px', // Set the width of the card
+    textAlign: 'center', // This will center the text horizontally
+    borderRadius: '50px' // This will make the edges rounded
+        
       }}
       >
-      <Typography>{targetLanguage}</Typography>
+      <Typography style={{ fontSize: '24px' }}>{targetLanguage}</Typography>
     </BackSide>
   </Flippy>
     );
