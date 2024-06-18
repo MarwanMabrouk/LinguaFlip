@@ -24,8 +24,8 @@ export default function CardList() {
         <Grid item xs={4} key={card.title}> 
         <Card 
         title={card.title}
-        source_language={card.source_language}
-        target_language={card.target_language}
+        sourceLanguage={card.sourceLanguage}
+        targetLanguage={card.targetLanguage}
         />
             
       </Grid>

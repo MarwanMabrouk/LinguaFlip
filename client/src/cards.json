@@ -2,33 +2,33 @@
     "cards":[
     {
       "title": "Greetings",
-      "source_language": "Hello",
-      "target_language": "Hallo"
+      "sourceLanguage": "Hello",
+      "targetLanguage": "Hallo"
     },
     {
       "title": "Farewell",
-      "source_language": "Goodbye",
-      "target_language": "Auf Wiedersehen"
+      "sourceLanguage": "Goodbye",
+      "targetLanguage": "Auf Wiedersehen"
     },
     {
       "title": "Morning Greeting",
-      "source_language": "Good morning",
-      "target_language": "Guten Morgen"
+      "sourceLanguage": "Good morning",
+      "targetLanguage": "Guten Morgen"
     },
     {
       "title": "Evening Greeting",
-      "source_language": "Good evening",
-      "target_language": "Guten Abend"
+      "sourceLanguage": "Good evening",
+      "targetLanguage": "Guten Abend"
     },
     {
       "title": "Night Greeting",
-      "source_language": "Good night",
-      "target_language": "Gute Nacht"
+      "sourceLanguage": "Good night",
+      "targetLanguage": "Gute Nacht"
     },
     {
         "title": "Day Greeting",
-        "source_language": "Good day",
-        "target_language": "Guten Tag"
+        "sourceLanguage": "Good day",
+        "targetLanguage": "Guten Tag"
       }
 ]
 }

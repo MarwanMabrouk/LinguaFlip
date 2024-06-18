@@ -1,7 +1,7 @@
 import { Typography } from '@mui/material';
 import Flippy, { FrontSide, BackSide } from 'react-flippy';
 
-export default function Card({title,source_language,target_language}) {
+export default function Card({title,sourceLanguage,targetLanguage}) {
 
     return(
         <Flippy
@@ -23,7 +23,7 @@ export default function Card({title,source_language,target_language}) {
         textAlign: 'center' // This will center the text horizontally
       }}
     >
-        <Typography> {source_language}</Typography>
+        <Typography> {sourceLanguage}</Typography>
     </FrontSide>
     <BackSide
          style={{
@@ -35,7 +35,7 @@ export default function Card({title,source_language,target_language}) {
         textAlign: 'center' // This will center the text horizontally
       }}
       >
-      <Typography>{target_language}</Typography>
+      <Typography>{targetLanguage}</Typography>
     </BackSide>
   </Flippy>
     );
