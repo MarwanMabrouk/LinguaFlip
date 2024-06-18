@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState , useEffect} from "react";
 import { useSignup } from "../hooks/useSignup";
 import { Button } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 
 const Signup = () =>{
     
@@ -13,13 +13,69 @@ const Signup = () =>{
     //const navigate = useNavigate();
 
 
+    // choose native and foreign language
+    
+    const [isOpenNative, setIsOpenNative] = useState(false);
+    const [isOpenForeign, setIsOpenForeign] = useState(false);
+    const [optionsNative, setOptionsNative] = useState(['English', 'Spanish']);
+    const [optionsForeign, setOptionsForeign] = useState([]);
+    const [filteredOptionsNative, setFilteredOptionsNative] = useState([]);
+    const [filteredOptionsForeign, setFilteredOptionsForeign] = useState([]);
+
+    useEffect(() => {
+        fetch('/nativeLanguages.txt')
+          .then(response => response.text())
+          .then(text => {
+            const optionsArray = text.split('\n').map(option => option.trim());
+            setOptionsNative(optionsArray);
+            setFilteredOptionsNative(optionsArray);
+          });
+        fetch('/foreignLanguages.txt')
+        .then(response => response.text())
+        .then(text => {
+            const optionsArray = text.split('\n').map(option => option.trim());
+            setOptionsForeign(optionsArray);
+            setFilteredOptionsForeign(optionsArray);
+        });
+      }, []);
+
     const handleSubmit = async (e) =>{
         e.preventDefault();
         await signup(email, password, nativeLanguage, foreignLanguage);
         //navigate('/home'); i'm not sure if that goes there
     }
    
+
+    const handleNativeChange = (event) => {
+        const value = event.target.value;
+        setNativeLanguage(value);
+        setFilteredOptionsNative(
+          optionsNative.filter(option => option.toLowerCase().includes(value.toLowerCase()))
+        );
+        setIsOpenNative(true);
+    };
     
+    const handleForeignChange = (event) => {
+        const value = event.target.value;
+        setForeignLanguage(value);
+        setFilteredOptionsForeign(
+          optionsForeign.filter(option => option.toLowerCase().includes(value.toLowerCase()))
+        );
+        setIsOpenForeign(true);
+    };
+    
+    const handleOptionClickNative = (option) => {
+        setNativeLanguage(option);
+        setIsOpenNative(false);
+    };
+    
+    const handleOptionClickForeign = (option) => {
+        setForeignLanguage(option);
+        setIsOpenForeign(false);
+    };
+    
+   
+
     return(
         <form className="signup" onSubmit ={handleSubmit}>
             <h2>Sign up </h2>
@@ -31,13 +87,52 @@ const Signup = () =>{
                 <label>Password:</label>
                 <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required/>
             </div>
-            <div>
+            <div className="dropdown">
                 <label>Native Language:</label>
-                <input type="nativeLanguage" value={nativeLanguage} onChange={(e) => setNativeLanguage(e.target.value)} required/>
+                            <input
+                    type="text"
+                    value={nativeLanguage}
+                    onChange={handleNativeChange}
+                    onFocus={() => setIsOpenNative(true)}
+                    onBlur={() => setTimeout(() => setIsOpenNative(false), 100)}
+                />
+            
+                {isOpenNative && (
+                    <div className="dropdown-menu">
+                    {filteredOptionsNative.map((option, index) => (
+                        <div
+                        key={index}
+                        className="dropdown-item"
+                        onMouseDown={() => handleOptionClickNative(option)}
+                        >
+                        {option}
+                        </div>
+                    ))}
+                    </div>
+                )}
             </div>
             <div>
                 <label>Foreign Language:</label>
-                <input type="foreignLanguage" value={foreignLanguage} onChange={(e) => setForeignLanguage(e.target.value)} required/>
+                <input
+                    type="text"
+                    value={foreignLanguage}
+                    onChange={handleForeignChange}
+                    onFocus={() => setIsOpenForeign(true)}
+                    onBlur={() => setTimeout(() => setIsOpenForeign(false), 100)}
+                />
+                {isOpenForeign && (
+                    <div className="dropdown-menu">
+                    {filteredOptionsForeign.map((option, index) => (
+                        <div
+                        key={index}
+                        className="dropdown-item"
+                        onMouseDown={() => handleOptionClickForeign(option)}
+                        >
+                        {option}
+                        </div>
+                    ))}
+                    </div>
+                )}
             </div>
             <Button type="submit" variant="contained" disabled = {isLoading}>Signup</Button>
             {error && <div className="error">{error}</div>}

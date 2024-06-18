@@ -1,0 +1,34 @@
+Arabic [1]
+Bulgarian
+Czech
+Danish
+German
+Greek
+English (unspecified variant for backward compatibility; please select EN-GB or EN-US instead)
+English (British)
+English (American)
+Spanish
+Estonian
+Finnish
+French
+Hungarian
+Indonesian
+Italian
+Japanese
+Korean
+Lithuanian
+Latvian
+Norwegian Bokmål
+Dutch
+Polish 
+Portuguese (unspecified variant for backward compatibility; please select PT-BR or PT-PT instead)
+Portuguese (Brazilian)
+Portuguese (all Portuguese varieties excluding Brazilian Portuguese)
+Romanian
+Russian
+Slovak
+Slovenian
+Swedish
+Turkish
+Ukrainian
+Chinese (simplified)
