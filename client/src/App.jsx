@@ -12,6 +12,7 @@ import {
 import Login from "./pages/login";
 import Signup from "./pages/signup";
 import Home from "./pages/home"
+import CardList from './components/CardList';
 
 
 const App = () => {
@@ -34,6 +35,10 @@ const App = () => {
             <Route 
               path="/signup" 
               element={!user ? <Signup /> : <Navigate to="/" />} 
+            />
+            <Route 
+              path="/CardList" 
+              element={<CardList />} 
             />
           </Routes>
         </div>
