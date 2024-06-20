@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import {userSchema} from '../models/userModel.js';
-const User = userSchema;
+const User = mongoose.model('User', userSchema);
 
 // I have installed npm install jsonwebtoken
 import jwt from 'jsonwebtoken';
@@ -12,12 +12,10 @@ const createToken = (_id) =>{
 // login user
 
 export const loginUser = async (req, res) => {
-
     const {email, password} = req.body;
-
     try{
-        const user = await User.login(email, password);
 
+        const user = await User.login(email, password);
         // create a token
         const token = createToken(user._id);
         res.status(200).json({email,token});
@@ -31,10 +29,9 @@ export const loginUser = async (req, res) => {
 
 export const signupUser = async (req, res) => {
     const {email, password, nativeLanguage, foreignLanguage}=req.body;
-
+    
     try{
         const user = await User.signup(email, password, nativeLanguage, foreignLanguage);
-
         // create a token
         const token = createToken(user._id);
         res.status(200).json({email,token, nativeLanguage, foreignLanguage});
