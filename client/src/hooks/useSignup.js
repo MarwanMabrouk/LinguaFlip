@@ -10,7 +10,7 @@ export const useSignup = () => {
         setIsLoading(true);
         setError(null);
 
-        const response = await fetch('/api/user/signup', { // i am not sure if the parameter is correct
+        const response = await fetch('http://localhost:5050/api/user/signup', { // i am not sure if the parameter is correct
 
             method:'POST',
             headers:{'Content-Type': 'application/json'},
