@@ -13,8 +13,8 @@ export default function Navbar() {
   }
   return (
     <header className="nav" >
-
-      <nav className="nav-links ">
+      <div>
+      <nav className="nav-links flex items-center">
         <img alt="LinguaFlip logo" class="h-20 inline" src={logo} />
         <div className="nav-links">
             <Link to="/">Home</Link>
@@ -40,7 +40,8 @@ export default function Navbar() {
           </div>
         )}
         
-      </nav>   
+      </nav>  
+      </div> 
       
     </header>
   );

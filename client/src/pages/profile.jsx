@@ -7,8 +7,8 @@ const Profile = () =>{
     const {user} = useAuthContext();
 
     return(
-        <Container>
-            <h2>Profile</h2>
+        <Container sx={{m:5 }}>
+            <Typography variant="h4">Profile</Typography>
             <div className="box">
                 <Typography ><strong>Email: </strong> {user.email}</Typography>
             </div>
