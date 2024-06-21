@@ -13,6 +13,7 @@ import Login from "./pages/login";
 import Signup from "./pages/signup";
 import Home from "./pages/home"
 import CardList from './components/CardList';
+import { Box } from '@mui/material';
 
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
   return (
     <div className="w-full p-6">
       <BrowserRouter>
+      <Box>
         <Navbar />
 
         <div>
@@ -42,6 +44,9 @@ const App = () => {
             />
           </Routes>
         </div>
+
+      </Box>
+        
       </BrowserRouter>
       
     </div>
