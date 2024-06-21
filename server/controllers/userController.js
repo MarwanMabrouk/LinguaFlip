@@ -6,7 +6,7 @@ const User = mongoose.model('User', userSchema);
 import jwt from 'jsonwebtoken';
 const createToken = (_id) =>{
     // the second argumnet schould be in a env file
-    jwt.sign({_id:_id}, process.env.SECRET, {expiresIn: '3d'});
+    return jwt.sign({_id:_id}, process.env.SECRET, {expiresIn: '3d'});
 } 
 
 // login user

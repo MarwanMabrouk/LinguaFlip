@@ -2,7 +2,7 @@ import express from "express";
 
 
 // contoller functions
-import {signupUser, loginUser} from '../controllers/userContoller.js';
+import {signupUser, loginUser} from '../controllers/userController.js';
 export const userRoutes = express.Router();
 
 
