@@ -48,8 +48,13 @@ export const postCard= async(req,res)=>{
         await card.save();
         const cardList=await CardList.findOne({"_id":cardList_id}).
                               exec();
-    
+        if (cardList.cards.length>0)
+        {
         cardList.cards=[card._id,...cardList.cards];
+        }
+        else{
+            cardList.cards=[card._id];
+        }
         await cardList.save();
 
         res.status(200).json({'message': 'card added succesfuly'});
