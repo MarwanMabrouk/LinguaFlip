@@ -46,6 +46,14 @@ input {
 
 }
 
+.container-profile {
+  display: grid;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+
+}
+
+
 .box {
   border: 1.5px solid #acacac; /* Bordes de la caja */
   padding: 15px; /* Espacio interno de la caja */

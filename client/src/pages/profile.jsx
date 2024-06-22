@@ -1,23 +1,28 @@
 
 import { useAuthContext } from "../hooks/useAuthContext";
-import { Container, Typography } from "@mui/material";
+import { Container, Typography, Box } from "@mui/material";
 
 const Profile = () =>{
 
     const {user} = useAuthContext();
 
     return(
-        <Container sx={{m:5 }}>
-            <Typography variant="h4">Profile</Typography>
-            <div className="box">
+        <Container sx={{m:5 }} className="container-profile">
+            <Box >
+                <Typography sx={{fontWeight: 'bold'}}variant="h4">Profile</Typography>
+            </Box>
+            
+            <Box className="box">
                 <Typography ><strong>Email: </strong> {user.email}</Typography>
-            </div>
-            <div className="box">
+            </Box>
+            <Box className="box">
                 <Typography ><strong>Native language: </strong> {user.nativeLanguage}</Typography>
-            </div>
-            <div className="box">
+            </Box>
+            <Box className="box">
                 <Typography ><strong>Foreign language: </strong> {user.foreignLanguage}</Typography>
-            </div>
+            </Box>
+          
+            
 
         </Container>
 
