@@ -4,6 +4,7 @@ import cors from "cors";
 import {userRoutes} from './routes/user.js';
 import 'dotenv/config';
 import mongoose from 'mongoose';
+import { cardListsRoutes } from "./routes/cardLists.js";
 
 //const PORT = process.env.PORT || 5050;
 const app = express();
@@ -17,8 +18,7 @@ app.use((req, res, next) => {
 })
 //app.use("/record", records);
 app.use("/api/user", userRoutes);
-
-
+app.use("/api/cardLists", cardListsRoutes);
 
 // connect to db
 mongoose.connect(process.env.ATLAS_URI)

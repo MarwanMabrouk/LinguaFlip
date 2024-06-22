@@ -1,0 +1,32 @@
+[
+    {
+      "title": "Greetings",
+      "sourceLanguage": "Hello",
+      "targetLanguage": "Hallo"
+    },
+    {
+      "title": "Farewell",
+      "sourceLanguage": "Goodbye",
+      "targetLanguage": "Auf Wiedersehen"
+    },
+    {
+      "title": "Morning Greeting",
+      "sourceLanguage": "Good morning",
+      "targetLanguage": "Guten Morgen"
+    },
+    {
+      "title": "Evening Greeting",
+      "sourceLanguage": "Good evening",
+      "targetLanguage": "Guten Abend"
+    },
+    {
+      "title": "Night Greeting",
+      "sourceLanguage": "Good night",
+      "targetLanguage": "Gute Nacht"
+    },
+    {
+        "title": "Day Greeting",
+        "sourceLanguage": "Good day",
+        "targetLanguage": "Guten Tag"
+      }
+]

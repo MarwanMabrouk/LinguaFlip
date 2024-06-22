@@ -1,9 +1,13 @@
 import mongoose from 'mongoose';
 import bcrypt from 'bcrypt';
 import validator from 'validator';
+import { cardListSchema,cardList} from './cardListModel.js';
+
 // i have install the validator package npm install validator
 
 const Schema = mongoose.Schema;
+
+
 
 export const userSchema = new Schema({
 
@@ -23,7 +27,8 @@ export const userSchema = new Schema({
     foreignLanguage:{
         type:String,
         required:true
-    }
+    },
+    cardLists:{type: [mongoose.Schema.Types.ObjectId], ref:'cardList',required: false}
 });
 
 // static signup method

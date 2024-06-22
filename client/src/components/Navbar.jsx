@@ -7,7 +7,6 @@ export default function Navbar() {
 
   const {logout} = useLogout();
   const {user} = useAuthContext();
-
   const handleClick = () =>{
     logout();
   }
@@ -18,7 +17,7 @@ export default function Navbar() {
         <img alt="LinguaFlip logo" class="h-20 inline" src={logo} />
         <div className="nav-links">
             <Link to="/">Home</Link>
-            <Link to="/CardList">CardList</Link>
+            <Link to="/CardList">Card Lists</Link>
             <Link to="/CardList">About Us</Link>
         </div>
 

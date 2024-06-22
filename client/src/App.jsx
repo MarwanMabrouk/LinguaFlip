@@ -11,10 +11,12 @@ import {
 
 import Login from "./pages/login";
 import Signup from "./pages/signup";
-import Home from "./pages/home"
-import CardList from './components/CardList';
+import Home from "./pages/home";
+import CardLists from './components/CardLists';
+import CardListDetails from './components/CardListDetails';
 import { Box } from '@mui/material';
 import Profile from './pages/profile';
+
 
 const App = () => {
   const {user} = useAuthContext();
@@ -40,8 +42,12 @@ const App = () => {
             />
             <Route 
               path="/CardList" 
-              element={<CardList />} 
+              element={<CardLists />} 
             />
+            <Route 
+              path="/CardList/:id" 
+              element={<CardListDetails/>}
+              />
             <Route 
               path="/profile"
               element={<Profile />}

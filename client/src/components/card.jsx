@@ -1,7 +1,7 @@
 import { Typography } from '@mui/material';
 import Flippy, { FrontSide, BackSide } from 'react-flippy';
 
-export default function Card({title,sourceLanguage,targetLanguage}) {
+export default function FlipCard({title,sourceLanguage,targetLanguage}) {
 
     return(
         <Flippy
@@ -21,6 +21,8 @@ export default function Card({title,sourceLanguage,targetLanguage}) {
     justifyContent: 'center',
     height: '100%', // Ensure the height is set so that the centering works correctly
     width: '300px', // Set the width of the card
+    minWidth: 300,
+    minHeight: 200,
     textAlign: 'center', // This will center the text horizontally
     borderRadius: '50px' // This will make the edges rounded
       }}

@@ -1,7 +1,8 @@
 import jwt from 'jsonwebtoken';
 import {userSchema} from '../models/userModel.js';
+import mongoose from 'mongoose';
 
-const User = userSchema;
+const User = mongoose.model('User', userSchema);
 export const requireAuth= async (req, res, next) =>{
     // verify that the user is authenticated
     const {authorization }= req.headers;
@@ -9,7 +10,7 @@ export const requireAuth= async (req, res, next) =>{
         return res.status(401).json({error:'Authorization token required'});
     }
 
-    const token = authorization.split('')[1];
+    const token = authorization;
     // verify token 
 
     try{
@@ -19,7 +20,7 @@ export const requireAuth= async (req, res, next) =>{
         next();
     }catch (error){
         console.log(error);
-        res.status(401).json({error: 'Request is not authorized'});
+        res.status(401).json({error: 'Request is not authorized'+error});
     }
 }
 

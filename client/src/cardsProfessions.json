@@ -1,0 +1,33 @@
+
+[
+{
+    "title": "Doctor",
+    "sourceLanguage": "Doctor",
+    "targetLanguage": "Arzt"
+},
+{
+    "title": "Nurse",
+    "sourceLanguage": "Nurse",
+    "targetLanguage": "Krankenschwester"
+},
+{
+    "title": "Teacher",
+    "sourceLanguage": "Teacher",
+    "targetLanguage": "Lehrer"
+},
+{
+    "title": "Engineer",
+    "sourceLanguage": "Engineer",
+    "targetLanguage": "Ingenieur"
+},
+{
+    "title": "Lawyer",
+    "sourceLanguage": "Lawyer",
+    "targetLanguage": "Anwalt"
+},
+{
+    "title": "Accountant",
+    "sourceLanguage": "Accountant",
+    "targetLanguage": "Buchhalter"
+}
+]
