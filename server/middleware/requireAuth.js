@@ -1,8 +1,10 @@
 import jwt from 'jsonwebtoken';
+import mongoose from 'mongoose';
 import {userSchema} from '../models/userModel.js';
 import mongoose from 'mongoose';
 
 const User = mongoose.model('User', userSchema);
+
 export const requireAuth= async (req, res, next) =>{
     // verify that the user is authenticated
     const {authorization }= req.headers;
@@ -11,16 +13,16 @@ export const requireAuth= async (req, res, next) =>{
     }
 
     const token = authorization;
-    // verify token 
-
     try{
+        // verify token 
         const {_id} = jwt.verify(token, process.env.SECRET);
 
         req.user = await User.findOne({_id}).select('_id');
+        console.log("jhere",req.user);
         next();
     }catch (error){
         console.log(error);
-        res.status(401).json({error: 'Request is not authorized'+error});
+        res.status(401).json({error: 'Request is not authorized'+ error.message});
     }
 }
 

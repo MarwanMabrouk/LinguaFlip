@@ -1,12 +1,13 @@
 import express from "express";
 import cors from "cors";
 //import records from "./routes/record.js";
-import {userRoutes} from './routes/user.js';
 import 'dotenv/config';
 import mongoose from 'mongoose';
 import { cardListsRoutes } from "./routes/cardLists.js";
 
-//const PORT = process.env.PORT || 5050;
+import {userRoutes} from './routes/user.js';
+import {translateRoutes} from './routes/translate.js';
+// const PORT = process.env.PORT || 5050;
 const app = express();
 
 //routes
@@ -16,9 +17,11 @@ app.use((req, res, next) => {
   console.log(req.path, req.method)
   next()
 })
+
 //app.use("/record", records);
 app.use("/api/user", userRoutes);
-app.use("/api/cardLists", cardListsRoutes);
+
+
 
 // connect to db
 mongoose.connect(process.env.ATLAS_URI)
