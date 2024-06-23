@@ -14,7 +14,7 @@ export default function Navbar() {
     <header className="nav" >
       <div>
       <nav className="nav-links flex items-center">
-        <img alt="LinguaFlip logo" class="h-20 inline" src={logo} />
+        <img alt="LinguaFlip logo" className="h-20 inline" src={logo} />
         <div className="nav-links">
             <Link to="/">Home</Link>
             <Link to="/CardList">Card Lists</Link>

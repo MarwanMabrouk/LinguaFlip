@@ -14,7 +14,7 @@ export const userSchema = new Schema({
     email:{
         type:String,
         required:true,
-        uniques:true
+        unique:true
     },
     password:{
         type:String,
@@ -43,9 +43,9 @@ userSchema.statics.signup = async function(email, password, nativeLanguage, fore
     if(!validator.isEmail(email)){
         throw Error('Email is not valid');
     }
-    if(!validator.isStrongPassword(password)){
-        throw Error('Password is not strong enough');
-    }
+    // if(!validator.isStrongPassword(password)){
+    //     throw Error('Password is not strong enough');
+    // }
     
 
     // check if they user already exists in the db

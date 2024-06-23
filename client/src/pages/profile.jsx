@@ -5,6 +5,8 @@ import { Container, Typography, Box } from "@mui/material";
 const Profile = () =>{
 
     const {user} = useAuthContext();
+    console.log("hola profile");
+    console.log(user);
 
     return(
         <Container sx={{m:5 }} className="container-profile">
