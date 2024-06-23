@@ -2,6 +2,7 @@ import mongoose from 'mongoose';
 import {userSchema} from '../models/userModel.js';
 import { cardListSchema } from '../models/cardListModel.js';
 import { cardSchema } from '../models/cardModel.js';
+import { translateText } from './translateController.js';
 
 const User = mongoose.model('User', userSchema);
 const CardList = mongoose.model('cardList', cardListSchema);
@@ -12,7 +13,6 @@ const Card=mongoose.model('card',cardSchema);
 export const fetchUserCardLists= async (req,res)=>{
     console.log(req.user)
     try{
-        console.log(fetchUserCardLists);
         const user_id =req.user;
         console.log(user_id);
         const user= await User.findOne({"_id":user_id}).
@@ -41,10 +41,11 @@ export const fetchCards= async (req,res)=>{
 
 export const postCard= async(req,res)=>{
     try{
-        const newCard=req.body
+        const targetLanguageText=await translateText(req.body.sourceLanguage);
+        console.log(targetLanguageText);
         const cardList_id=req.params.id;
     
-        const card=new Card(newCard);
+        const card=new Card({...req.body,"targetLanguage":targetLanguageText});
         await card.save();
         const cardList=await CardList.findOne({"_id":cardList_id}).
                               exec();

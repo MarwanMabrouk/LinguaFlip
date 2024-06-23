@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 import mongoose from 'mongoose';
 import {userSchema} from '../models/userModel.js';
-import mongoose from 'mongoose';
+
 
 const User = mongoose.model('User', userSchema);
 

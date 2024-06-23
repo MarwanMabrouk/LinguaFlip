@@ -9,7 +9,7 @@ export const AddCardModal = ({ open, handleClose, handleAddCard }) => {
     
 
     const handleSubmit = () => {
-        handleAddCard({ title, sourceLanguage, targetLanguage });
+        handleAddCard({ title, sourceLanguage });
         handleClose();
     };
 
@@ -43,13 +43,6 @@ export const AddCardModal = ({ open, handleClose, handleAddCard }) => {
                     fullWidth
                     value={sourceLanguage}
                     onChange={(e) => setSourceLanguage(e.target.value)}
-                    sx={{ mt: 2 }}
-                />
-                <TextField
-                    label="Target Language"
-                    fullWidth
-                    value={targetLanguage}
-                    onChange={(e) => setTargetLanguage(e.target.value)}
                     sx={{ mt: 2 }}
                 />
                 <Button onClick={handleSubmit} variant="contained" sx={{ mt: 2 }}>

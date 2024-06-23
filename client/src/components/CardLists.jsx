@@ -32,6 +32,7 @@ export default function CardLists() {
 
     const fetchCardLists=async ()=>{
         try{
+            console.log(user)
         const response = await fetch('http://localhost:5050/api/cardLists', {
         method:'GET',
         headers:

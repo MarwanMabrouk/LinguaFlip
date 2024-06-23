@@ -13,12 +13,14 @@ const translator = new deepl.Translator(process.env.DEEPL_API_KEY);
 
 async function translateText(req, res) {
     try {
+        
         let newDocument = {
             text: req.body.text,
         };
         
         let User = req.user;
         console.log("translate User is ", User);
+        console.log(req.body);
         let sourceLanguage = User.nativeLanguage;
         let targetLanguage = User.foreignLanguage;
         //TODO: convert sourceLanguage and targetLanguage to deepl language codes

@@ -63,12 +63,14 @@ export default function CardList() {
                 },
                 body:JSON.stringify(newCard) 
             })  
+
+            const jsonResponse=await response.json();
             if(cards.length>0)
             {
-                setCards([newCard,...cards]);
+                setCards([jsonResponse,...cards]);
             }
            else{
-                setCards([newCard])
+                setCards([jsonResponse]);
            }
         }
         catch(error)
