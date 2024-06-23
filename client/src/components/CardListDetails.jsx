@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import FlipCard from "./card";
-import { Grid, Typography, CardContent, Card } from "@mui/material";
+import { Grid, Typography, CardContent, Card, Button } from "@mui/material";
+import ShuffleIcon from '@mui/icons-material/Shuffle';
 import { useParams } from "react-router-dom";
 import { useAuthContext } from "../hooks/useAuthContext";
 import { styled } from '@mui/system';
@@ -76,6 +77,19 @@ export default function CardList() {
         }
     }
 
+    const shuffleArray = (array) => {
+        let shuffledArray = array.slice(); // Create a copy of the array
+        for (let i = shuffledArray.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+        }
+        return shuffledArray;
+    };
+
+    const handleShuffle = () => {
+        setCards(shuffleArray(cards));
+    };
+
     useEffect(()=>{
         fetchCards()
     },[]);
@@ -83,6 +97,14 @@ export default function CardList() {
 
     return(
         <div>
+            <Button
+                onClick={handleShuffle}
+                variant="contained"
+                startIcon={<ShuffleIcon />}
+                sx={{ width: '100%', mb: 2,backgroundColor: '#41669d' }}
+            >
+                Shuffle Cards
+            </Button>
 <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
 <Grid item xs={4}>
                     <AddCard onClick={handleOpen}>

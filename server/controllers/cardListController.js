@@ -57,7 +57,7 @@ export const postCard= async(req,res)=>{
         }
         await cardList.save();
 
-        res.status(200).json({'message': 'card added succesfuly'});
+        res.status(200).json(card);
     }       
     catch(error){
         res.status(400).json({error: error.message});
