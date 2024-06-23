@@ -14,12 +14,21 @@ export default function Navbar() {
     <header className="nav" >
       <div>
       <nav className="nav-links flex items-center">
+
         <img alt="LinguaFlip logo" className="h-20 inline" src={logo} />
-        <div className="nav-links">
+        {user && (
+          <div className="nav-links">
+            <Link to="/CardList">About Us</Link>
             <Link to="/">Home</Link>
             <Link to="/CardList">Card Lists</Link>
-            <Link to="/CardList">About Us</Link>
-        </div>
+          </div>
+        )}
+        { !user && (
+            <div className="nav-links">
+              <Link to="/CardList">About Us</Link>
+          </div>
+        )}
+        
 
         <div className="flex-grow"></div> 
 

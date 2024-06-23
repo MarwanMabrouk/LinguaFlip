@@ -2,6 +2,7 @@
 // import { useAuthContext } from "../hooks/useAuthContext";
 import map from "../assets/map.png";
 import { Box } from "@mui/material";
+
 const Home = () =>{
     //const {user} = useAuthContext();
     return (

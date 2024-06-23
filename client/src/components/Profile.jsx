@@ -9,10 +9,10 @@ const Profile = () =>{
     console.log(user);
 
     return(
-        <Container sx={{m:5 }} className="container-profile">
-            <Box >
+        <Container sx={{m:5 }} >
+            <div className="centered-container">
                 <Typography sx={{fontWeight: 'bold'}}variant="h4">Profile</Typography>
-            </Box>
+            </div>
             
             <Box className="box">
                 <Typography ><strong>Email: </strong> {user.email}</Typography>

@@ -1,8 +1,7 @@
 import { useState , useEffect} from "react";
 import { useSignup } from "../hooks/useSignup";
-import { Button } from "@mui/material";
-//import { useNavigate } from "react-router-dom";
-
+import { Button , Typography} from "@mui/material";
+import AccountCircleSharpIcon from '@mui/icons-material/AccountCircleSharp';
 const Signup = () =>{
     
     const [email, setEmail]=useState('');
@@ -78,7 +77,13 @@ const Signup = () =>{
 
     return(
         <form className="signup" onSubmit ={handleSubmit}>
-            <h2>Sign up </h2>
+             <div className="centered-container">
+                <AccountCircleSharpIcon className="item"  sx={{ fontSize: 55 }}  />
+                <Typography className="item" variant="h5"><strong>Create your account!</strong></Typography>
+                
+            </div>
+            
+            
             <div>
                 <label><h1>Email:</h1></label>
                 <input type="email"  onChange={(e) => setEmail(e.target.value)} value={email} required/>

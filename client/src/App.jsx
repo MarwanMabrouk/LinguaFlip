@@ -15,7 +15,7 @@ import Home from "./pages/home";
 import CardLists from './components/CardLists';
 import CardListDetails from './components/CardListDetails';
 import { Box } from '@mui/material';
-import Profile from './pages/profile';
+import Profile from './components/Profile';
 
 
 const App = () => {

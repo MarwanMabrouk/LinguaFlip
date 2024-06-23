@@ -47,10 +47,9 @@ input {
 }
 
 .container-profile {
-  display: grid;
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
-
+  display: flex;
+  justify-content: center;
+  
 }
 
 
@@ -73,12 +72,23 @@ input {
   border-radius: 8px; /* Bordes reclass="box"dclass="box"ondeados */
   
 }
+.centered-container {
+  display: grid;
+  place-items: center;
+  height: 15vh;
+}
+
+.item {
+  margin: 5px 0; /* Espacio entre los elementos */
+  padding: 1px;
+  text-align: center;
+}
 
 .nav {
     background-color: #f2f6fa; /* Color de fondo del header */
     padding: 10px;
     max-height:100px;
-    border-radius: 10px;
+    border-radius: 20px;
   }
   
 .nav-links {
