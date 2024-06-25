@@ -16,6 +16,7 @@ import CardLists from './components/CardLists';
 import CardListDetails from './components/CardListDetails';
 import { Box } from '@mui/material';
 import Profile from './components/Profile';
+import PlaySelectTopic from './components/PlaySelectTopic';
 
 
 const App = () => {
@@ -51,6 +52,10 @@ const App = () => {
             <Route 
               path="/profile"
               element={<Profile />}
+              />
+              <Route 
+              path="/play"
+              element={<PlaySelectTopic />}
               />
           </Routes>
         </div>
