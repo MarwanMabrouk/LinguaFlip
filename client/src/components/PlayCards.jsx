@@ -110,17 +110,16 @@ return (
                 sourceLanguage={cards[currentCardIndex].sourceLanguage}
                 targetLanguage={cards[currentCardIndex].targetLanguage}
                 showBack={showFeedback} // Show the back side if feedback is shown
-    sx={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: '200%', // Ensure the height is set so that the centering works correctly
-        width: '500px', // Set the width of the card
-        minWidth: '500px',
-        minHeight:'500px',
-        textAlign: 'center', // This will center the text horizontally
-        borderRadius: '50px' // This will make the edges rounded
-    }}
+                containerSx={{
+                        height: '350px', // Ensure the height is set so that the centering works correctly
+                        width: '600px', // Set the width of the card
+                        minWidth: 300,
+                        minHeight: 200,
+                    }}
+                typoSx={{
+                        fontSize:'30px'
+                }}
+                   
             />
             <TextField
             label="Enter translation"
@@ -131,7 +130,9 @@ return (
             sx={{
                 maxWidth: '500px', // Same as the card width
                 marginBottom: '0px', // Space between text field and the next element
-                padding: '0 10px' // Optional: Add some padding for better aesthetics
+                padding: '0 10px',// Optional: Add some padding for better aesthetics
+                marginTop: '15px' 
+
             }}
             disabled={timeLeft <= 0} // Disable text field when time runs out
         />

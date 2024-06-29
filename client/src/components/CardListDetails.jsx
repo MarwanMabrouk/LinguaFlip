@@ -107,8 +107,8 @@ export default function CardList() {
             >
                 Shuffle Cards
             </Button>
-<Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-<Grid item xs={4}>
+<Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }} justify={"center"}>
+    <Grid item xs={4}>
                     <AddCard onClick={handleOpen}>
                         <CardContent>
                             <Typography variant="h6" component="div" color="textSecondary">
@@ -116,7 +116,7 @@ export default function CardList() {
                             </Typography>
                         </CardContent>
                     </AddCard>
-                </Grid>
+    </Grid>
             <AddCardModal open={open} handleClose={handleClose} handleAddCard={handleAddCard} />
 
     {
@@ -127,6 +127,12 @@ export default function CardList() {
         title={card.title}
         sourceLanguage={card.sourceLanguage}
         targetLanguage={card.targetLanguage}
+        containerSx={{
+            height: '200px', // Ensure the height is set so that the centering works correctly
+            width: '300px', // Set the width of the card
+            minWidth: 300,
+            minHeight: 200,
+        }}
         />
             
       </Grid>

@@ -74,7 +74,7 @@ export default function PlaySelectTopic(){
                                 <CardActions>
           <Button size="small" 
                   onClick={() => handleShowCards(cardList._id)}>
-                  Show Cards
+                  Play 
             </Button>
           </CardActions>
                             </Card> 
