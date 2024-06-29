@@ -1,6 +1,6 @@
 import {  useEffect, useState } from "react";
 import * as React from 'react';
-import { Grid, Typography, Box, Card,CardContent} from "@mui/material";
+import { Grid, Typography, Box, Card,CardContent, CardActions, Button} from "@mui/material";
 import { useAuthContext } from "../hooks/useAuthContext";
 import { useNavigate } from "react-router-dom";
 
@@ -19,6 +19,11 @@ export default function PlaySelectTopic(){
         setListSelected(id);
 
     };
+
+    const handleShowCards = (id) => {
+        navigate(`/play/${id}`);
+    };
+
 
     const fetchCardLists=async ()=>{
         try{
@@ -66,6 +71,12 @@ export default function PlaySelectTopic(){
                                         Number of cards: {cardList.cards.length}
                                     </Typography>
                                 </CardContent>
+                                <CardActions>
+          <Button size="small" 
+                  onClick={() => handleShowCards(cardList._id)}>
+                  Show Cards
+            </Button>
+          </CardActions>
                             </Card> 
                         </Box>  
                     </Grid>
