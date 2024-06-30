@@ -18,14 +18,14 @@ export default function Navbar() {
         <img alt="LinguaFlip logo" className="h-20 inline" src={logo} />
         {user && (
           <div className="nav-links">
-            <Link to="/CardList">About Us</Link>
+            <Link to="/AboutUs">About Us</Link>
             <Link to="/">Home</Link>
             <Link to="/CardList">Card Lists</Link>
           </div>
         )}
         { !user && (
             <div className="nav-links">
-              <Link to="/CardList">About Us</Link>
+              <Link to="/AboutUs">About Us</Link>
           </div>
         )}
         

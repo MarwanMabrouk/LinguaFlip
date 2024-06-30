@@ -10,16 +10,8 @@ export default function PlaySelectTopic(){
     const [cardLists,setCardLists]=useState([]);
     const {user} = useAuthContext();
     const navigate=useNavigate();
-    const [isSelected, setIsSelected] = useState(false);
-    const [listSelected, setListSelected] = useState(null);
-
-    const handleListSelected = (id) => {
-        setIsSelected(true);
-        // id is the id of the list card that has been selected
-        setListSelected(id);
-
-    };
-
+   
+    
     const handleShowCards = (id) => {
         navigate(`/play/${id}`);
     };
@@ -54,7 +46,7 @@ export default function PlaySelectTopic(){
                 
                 {cardLists.length>0 && cardLists.map((cardList)=>(
                     
-                    <Grid item xs={4} key={cardList._id} onClick={() =>handleListSelected(cardList._id)}> 
+                    <Grid item xs={4} key={cardList._id} > 
                         <Box sx={{ minWidth: 275 }}>
                             <Card variant="outlined" sx={{height: 188}} >
                                 <CardContent>

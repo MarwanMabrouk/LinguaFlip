@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 import FlipCard from "./card";
 import { Grid, Typography, CardContent, Card, Button, TextField, Box, CircularProgress, Snackbar, Alert } from "@mui/material";
 import ShuffleIcon from '@mui/icons-material/Shuffle';
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useAuthContext } from "../hooks/useAuthContext";
 import { styled } from '@mui/system';
 import { AddCardModal } from "./AddCardModal";
+import KeyboardBackspaceOutlinedIcon from '@mui/icons-material/KeyboardBackspaceOutlined';
 
 
 
@@ -191,10 +192,24 @@ return (
         </div>
     </div>
 ) : (
-    <div style={{ position: 'absolute', top: '40px', right: '-250px' }}>
-    <Typography variant="h4" component="div" sx={{ marginTop: 2 }}>
-        Your Score: {score}/{cards.length}
-    </Typography>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        
+
+        <div style={{ position: 'relative', width: '800px', height: '50px', marginBottom: '20px', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+            <Typography variant="h4" component="div" sx={{ marginTop: 2 }}>
+                Your Score: {score}/{cards.length}
+            </Typography>
+        </div>
+        <div style={{position:'relative', width: '800px', marginTop:'20px'}}> 
+            
+            <div style={{left:0}}>
+                <Link to="/play">
+                    <KeyboardBackspaceOutlinedIcon fontSize="large"/>
+                    Back
+                </Link>
+            </div>
+            
+        </div>
     </div>
     
 )}
