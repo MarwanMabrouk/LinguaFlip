@@ -1,6 +1,11 @@
 {
-  "dependencies": {
-    "bcrypt": "^5.1.1",
-    "validator": "^13.12.0"
+  
+  "scripts": {
+    "client": "cd client && npm run dev",
+    "server": "cd server && npm run start",
+    "start": "concurrently \"npm run client\" \"npm run server\" "
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
   }
 }
