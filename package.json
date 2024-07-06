@@ -1,11 +1,38 @@
 {
   
   "scripts": {
-    "client": "cd client && npm run dev",
-    "server": "cd server && npm run start",
-    "start": "concurrently \"npm run client\" \"npm run server\" "
+  
+    
+  "install": "cd client && npm install && cd ../server && npm install",
+  
+    
+  "build": "cd client && npm run build && cd ../server && npm run build",
+  
+    
+  "clean": "rimraf node_modules && cd client && npm run clean && cd ../server && npm run clean",
+  
+    
+  "client": "cd client && npm run dev",
+  
+    
+  "server": "cd server && npm run start",
+  
+    
+  "start": "concurrently \"npm run client\" \"npm run server\" "
+  
   },
+  
   "devDependencies": {
-    "concurrently": "^8.2.2"
+  
+    
+  "concurrently": "^8.2.2"
+  
+  },
+  
+  "dependencies": {
+  
+    
+  "rimraf": "^5.0.8"
+  
   }
 }
