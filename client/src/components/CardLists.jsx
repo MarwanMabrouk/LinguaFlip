@@ -10,6 +10,8 @@ export default function CardLists() {
 
     const [cardLists,setCardLists]=useState([]);
     const {user} = useAuthContext();
+    const userSourceLanguage = user.nativeLanguage;
+    const userTargetLanguage = user.foreignLanguage;
     const navigate=useNavigate();
     const [open, setOpen] = useState(false);
 
@@ -107,10 +109,10 @@ export default function CardLists() {
               Topic: {cardList.topic}
             </Typography>
             <Typography  variant="body2">
-             Source Language: {cardList.sourceLanguage}
+             Source Language: {userSourceLanguage}
             </Typography>
             <Typography  variant="body2">
-              Target Language: {cardList.targetLanguage}
+              Target Language: {userTargetLanguage}
             </Typography>
             <Typography variant="body2">
               Number of cards: {cardList.cards.length}
