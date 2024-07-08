@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
 import { Box, Typography, Button, Modal, TextField } from '@mui/material';
+import { useAuthContext } from "../hooks/useAuthContext";
 
 
 export const AddCardModal = ({ open, handleClose, handleAddCard }) => {
     const [title, setTitle] = useState('');
     const [sourceLanguage, setSourceLanguage] = useState('');
     const [targetLanguage, setTargetLanguage] = useState('');
-    
+    const {user} = useAuthContext();
+    const userSourceLanguage = user.nativeLanguage;
+    const userTargetLanguage = user.foreignLanguage;
 
     const handleSubmit = () => {
-        handleAddCard({ title, sourceLanguage });
+
+        handleAddCard({ title, sourceLanguage:title, targetLanguage:userTargetLanguage});
         handleClose();
     };
 
@@ -32,19 +36,13 @@ export const AddCardModal = ({ open, handleClose, handleAddCard }) => {
                     Add a New Card
                 </Typography>
                 <TextField
-                    label="Title"
+                    label="Word or Phrase"
                     fullWidth
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
                     sx={{ mt: 2 }}
                 />
-                <TextField
-                    label="Source Language"
-                    fullWidth
-                    value={sourceLanguage}
-                    onChange={(e) => setSourceLanguage(e.target.value)}
-                    sx={{ mt: 2 }}
-                />
+
                 <Button onClick={handleSubmit} variant="contained" sx={{ mt: 2 }}>
                     Add Card
                 </Button>

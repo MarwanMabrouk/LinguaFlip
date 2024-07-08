@@ -53,6 +53,25 @@ export default function CardList() {
     }
 }
     const handleAddCard= async(newCard)=>{
+        console.log("New card added",newCard);
+        try {
+            const text = newCard.title;
+            const response =  await fetch(`http://localhost:5050/api/translate/${text}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'authorization': user.token
+                },
+                body: JSON.stringify(request)
+            });
+            const jsonResponse = await  response.json();
+            console.log("Translate ***",jsonResponse);
+
+
+        }catch (error) {
+            console.error('Error translating:', error);
+        }
+
         try{
             const response = await fetch(`http://localhost:5050/api/cardLists/${id}`, {
                 method:'POST',
