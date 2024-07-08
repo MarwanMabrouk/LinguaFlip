@@ -9,11 +9,12 @@ const Profile = () =>{
     console.log(user);
 
     return(
-        <Container sx={{m:5 }} >
+        <div className="container-profile">
+        <Container sx={{m:5 }} className="container-profile" >
             <div className="centered-container">
                 <Typography sx={{fontWeight: 'bold'}}variant="h4">Profile</Typography>
             </div>
-            
+            <div className="centered-container">
             <Box className="box">
                 <Typography ><strong>Email: </strong> {user.email}</Typography>
             </Box>
@@ -23,10 +24,11 @@ const Profile = () =>{
             <Box className="box">
                 <Typography ><strong>Foreign language: </strong> {user.foreignLanguage}</Typography>
             </Box>
-          
+            </div>
             
 
         </Container>
+        </div>
 
     )
 

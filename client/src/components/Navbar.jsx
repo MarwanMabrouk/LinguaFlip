@@ -13,32 +13,34 @@ export default function Navbar() {
   return (
     <header className="nav" >
       <div>
-      <nav className="nav-links flex items-center">
+      <nav className="nav-links flex items-center"  style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0 20px', height: '80px', backgroundColor: '#f8f9fa', color: '#333', borderBottom: '1px solid #ccc'}}>
 
-        <img alt="LinguaFlip logo" className="h-20 inline" src={logo} />
+        <img alt="LinguaFlip logo" className="navbar-logo" style={{ maxHeight: '100%', height: 'auto', display: 'inline-block' }} src={logo} />
         {user && (
           <div className="nav-links">
-            <Link to="/AboutUs">About Us</Link>
             <Link to="/">Home</Link>
             <Link to="/CardList">Card Lists</Link>
+            <Link to="/profile">Profile</Link>
+            <Link to="/play">Play</Link>
+            <Link to="/create">Create</Link>
+            <Link to="/AboutUs">About Us</Link>
           </div>
         )}
         { !user && (
             <div className="nav-links">
+               <Link to="/">Home</Link>
               <Link to="/AboutUs">About Us</Link>
           </div>
         )}
         
 
-        <div className="flex-grow"></div> 
+        {/* <div className="flex-grow"></div>  */}
 
         {user && (  // when the user is login show this
           <div className="nav-links">
             <span>{user.email}</span>
             <Link onClick ={handleClick}>Logout</Link>
-            <Link to="/profile">Profile</Link>
-            <Link to="/play">Play</Link>
-            <Link to="/create">Create</Link>
+
           </div>
         )}
         { !user && ( // when the user is not login show this
