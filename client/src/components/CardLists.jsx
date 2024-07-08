@@ -124,6 +124,10 @@ export default function CardLists() {
                   onClick={() => handleShowCards(cardList._id)}>
                   Show Cards
             </Button>
+            <Button size="small" variant="outlined" 
+                    >
+                  Expand using AI  ✨
+            </Button>
           </CardActions>
             </Card>
             
