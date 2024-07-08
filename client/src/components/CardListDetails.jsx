@@ -55,8 +55,10 @@ export default function CardList() {
     const handleAddCard= async(newCard)=>{
         console.log("New card added",newCard);
         try {
-            const text = newCard.title;
-            const response =  await fetch(`http://localhost:5050/api/translate/${text}`, {
+            const request = {
+                text: newCard.sourceLanguage
+            }
+            const response =  await fetch(`http://localhost:5050/api/translate`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

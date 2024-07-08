@@ -13,9 +13,8 @@ export const AddCardListModal = ({ open, handleClose, handleAddCardList }) => {
     
 
     const handleSubmit = () => {
-        setSourceLanguage(userSourceLanguage);
-    setTargetLanguage(userTargetLanguage);
-        handleAddCardList({ topic, sourceLanguage, targetLanguage, cards:[] });
+
+        handleAddCardList({ topic, sourceLanguage:userSourceLanguage, targetLanguage:userTargetLanguage, cards:[] });
         handleClose();
     };
 
