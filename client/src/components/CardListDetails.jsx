@@ -58,7 +58,7 @@ export default function CardList() {
             const request = {
                 text: newCard.sourceLanguage
             }
-            const response =  await fetch(`http://localhost:5050/api/translate`, {
+            const response =  await fetch(`http://localhost:5050/api/services/translate`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
