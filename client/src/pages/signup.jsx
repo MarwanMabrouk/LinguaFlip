@@ -85,7 +85,7 @@ const Signup = () =>{
             
             
             <div>
-                <label><h1>Email:</h1></label>
+                <label>Email:</label>
                 <input type="email"  onChange={(e) => setEmail(e.target.value)} value={email} required/>
             </div>
             <div>
@@ -139,7 +139,7 @@ const Signup = () =>{
                     </div>
                 )}
             </div>
-            <Button type="submit" variant="contained" disabled = {isLoading}>Signup</Button>
+            <Button sx={{backgroundColor: 'primary.dark', color: '#fff'}} type="submit" variant="contained" disabled = {isLoading}>Signup</Button>
             {error && <div className="error">{error}</div>}
         </form>
 

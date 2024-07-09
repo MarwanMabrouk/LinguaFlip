@@ -15,7 +15,7 @@ export default function FlipCard({title,sourceLanguage,targetLanguage,containerS
   >
     <FrontSide
       style={{
-        backgroundColor: '#41669d',
+        backgroundColor: '#0277bd',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -24,11 +24,11 @@ export default function FlipCard({title,sourceLanguage,targetLanguage,containerS
     ...containerSx
       }}
     >
-        <Typography style={{fontSize: '24px',...typoSx}}> {sourceLanguage}</Typography>
+        <Typography style={{fontSize: '24px', color:'#fff',...typoSx}}> {sourceLanguage}</Typography>
     </FrontSide>
     <BackSide
          style={{
-        backgroundColor:'#175852' ,
+        backgroundColor:'#b3e5fc' ,
         display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',

@@ -13,7 +13,7 @@ export default function Navbar() {
   return (
     <header className="nav" >
       <div>
-      <nav className="nav-links flex items-center"  style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0 20px', height: '80px', backgroundColor: '#f8f9fa', color: '#333', borderBottom: '1px solid #ccc'}}>
+      <nav className="nav-links flex items-center"  style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0 20px', height: '80px', backgroundColor: '#e1f5fe', color: '#333', borderBottom: '1px solid #ccc'}}>
 
         <img alt="LinguaFlip logo" className="navbar-logo" style={{ maxHeight: '100%', height: 'auto', display: 'inline-block' }} src={logo} />
         {user && (

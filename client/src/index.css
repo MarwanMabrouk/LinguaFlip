@@ -19,7 +19,7 @@ form.signup, form.login {
     max-width: 400px;
     margin: 40px auto;
     padding: 20px;
-    background: #e0f2f1;
+    background: #e1f5fe;
     border-radius: 6px;
   }
   
@@ -81,7 +81,7 @@ input {
 }
 
 .nav {
-    background-color: #f2f6fa; /* Color de fondo del header */
+    background-color: #b3e5fc; /* Color de fondo del header */
     padding: 10px;
     max-height:100px;
     border-radius: 20px;

@@ -38,7 +38,7 @@ const Login = () =>{
             
             </div>
             
-            <Button type="submit" variant="contained" disabled ={isLoading}>Login</Button>
+            <Button sx={{backgroundColor: 'primary.dark', color: '#fff'}} type="submit" variant="contained" disabled ={isLoading}>Login</Button>
             {error && <div className="error">{error}</div>}
         </form>
 
