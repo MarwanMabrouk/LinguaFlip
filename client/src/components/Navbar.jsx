@@ -22,7 +22,6 @@ export default function Navbar() {
             <Link to="/CardList">Card Lists</Link>
             <Link to="/profile">Profile</Link>
             <Link to="/play">Play</Link>
-            <Link to="/create">Create</Link>
             <Link to="/AboutUs">About Us</Link>
           </div>
         )}
