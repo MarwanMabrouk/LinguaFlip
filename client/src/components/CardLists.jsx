@@ -66,13 +66,10 @@ export default function CardLists() {
                 },
                 body:JSON.stringify(newCardList) 
             })  
-            if(cardLists.length>0)
-            {
-                setCardLists([newCardList,...cardLists]);
-            }
-           else{
-                setCardLists([newCardList])
-           }
+            ;
+            //fetch cards again
+            fetchCardLists();
+            
         }
         catch(error)
         {
