@@ -45,7 +45,7 @@ input {
 .container-profile {
   display: flex;
   justify-content: center;
-  
+ 
 }
 
 
@@ -53,10 +53,10 @@ input {
   border: 1.5px solid #acacac; /* Bordes de la caja */
   padding: 15px; /* Espacio interno de la caja */
   margin: 10px; /* Espacio externo de la caja */
-  background-color:#f2f6fa; /* Color de fondo de la caja */
+  background-color:#e1f5fe; /* Color de fondo de la caja */
   font-family: Arial, sans-serif; /* Fuente del texto */
   border-radius: 8px; /* Bordes reclass="box"dclass="box"ondeados */
-  max-width: 600px;
+  width: 350px
 }
 
 .box-text-field{
@@ -81,7 +81,7 @@ input {
 }
 
 .nav {
-    background-color: #81d4fa; /* Color de fondo del header */
+    background-color: #b3e5fc; /* Color de fondo del header */
     padding: 10px;
     max-height:100px;
     border-radius: 20px;

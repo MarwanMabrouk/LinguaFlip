@@ -124,7 +124,7 @@ export default function CardList() {
                 onClick={handleShuffle}
                 variant="contained"
                 startIcon={<ShuffleIcon />}
-                sx={{ width: '100%', mb: 2,backgroundColor: '#0277bd' }}
+                sx={{ width: '100%', mb: 2,backgroundColor: '#0277bd' , color: '#fff'}}
             >
                 Shuffle Cards
             </Button>

@@ -14,16 +14,16 @@ const Profile = () =>{
             <div className="centered-container">
                 <Typography sx={{fontWeight: 'bold'}}variant="h4">Profile</Typography>
             </div>
-            <div className="centered-container">
-            <Box className="box">
-                <Typography ><strong>Email: </strong> {user.email}</Typography>
-            </Box>
-            <Box className="box">
-                <Typography ><strong>Native language: </strong> {user.nativeLanguage}</Typography>
-            </Box>
-            <Box className="box">
-                <Typography ><strong>Foreign language: </strong> {user.foreignLanguage}</Typography>
-            </Box>
+            <div sx={{width: "400px"}} className="centered-container">
+                <Box className="box">
+                    <Typography ><strong>Email: </strong> {user.email}</Typography>
+                </Box>
+                <Box className="box">
+                    <Typography ><strong>Native language: </strong> {user.nativeLanguage}</Typography>
+                </Box>
+                <Box className="box">
+                    <Typography ><strong>Foreign language: </strong> {user.foreignLanguage}</Typography>
+                </Box>
             </div>
             
 

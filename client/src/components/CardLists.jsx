@@ -120,11 +120,11 @@ export default function CardLists() {
             </Typography>
           </CardContent>
           <CardActions>
-          <Button sx={{color:'primary.dark'}} size="small" variant="outlined"
+          <Button sx={{color:'primary.dark', borderColor: 'primary.dark'}} size="small" variant="outlined"
                   onClick={() => handleShowCards(cardList._id)}>
                   Show Cards
             </Button>
-            <Button sx={{color:'primary.dark'}} size="small" variant="outlined" 
+            <Button sx={{color:'primary.dark', borderColor: 'primary.dark'}} size="small" variant="outlined" 
                     >
                   Expand using AI  ✨
             </Button>

@@ -28,7 +28,7 @@ export default function FlipCard({title,sourceLanguage,targetLanguage,containerS
     </FrontSide>
     <BackSide
          style={{
-        backgroundColor:'#b3e5fc' ,
+        backgroundColor:'#e1f5fe' ,
         display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',

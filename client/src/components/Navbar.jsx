@@ -22,13 +22,13 @@ export default function Navbar() {
             <Link to="/CardList">Card Lists</Link>
             <Link to="/profile">Profile</Link>
             <Link to="/play">Play</Link>
-            <Link to="/AboutUs">About Us</Link>
+            <Link to="/AboutUs">About the Project</Link>
           </div>
         )}
         { !user && (
             <div className="nav-links">
                <Link to="/">Home</Link>
-              <Link to="/AboutUs">About Us</Link>
+              <Link to="/AboutUs">About the Project</Link>
           </div>
         )}
         

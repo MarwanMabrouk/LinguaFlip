@@ -64,7 +64,7 @@ export default function PlaySelectTopic(){
                                     </Typography>
                                 </CardContent>
                                 <CardActions>
-          <Button size="small" 
+          <Button sx={{color:'primary.dark', borderColor: 'primary.dark'}} size="small" variant="outlined"
                   onClick={() => handleShowCards(cardList._id)}>
                   Play 
             </Button>
