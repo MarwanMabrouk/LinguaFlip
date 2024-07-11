@@ -141,7 +141,7 @@ return (
             <Button
                 onClick={handleSubmit}
                 variant="contained"
-                color="primary"
+                sx={{backgroundColor: 'primary.main', color: '#000'}}
                 style={{ marginRight: '10px' }}
                 disabled={timeLeft <= 0} // Disable button when time runs out
             >
@@ -150,7 +150,7 @@ return (
             <Button
                 onClick={handleNextCard}
                 variant="contained"
-                color="secondary"
+                sx={{backgroundColor: 'primary.main', color: '#000'}}
             >
                 Next Card
             </Button>
@@ -167,7 +167,7 @@ return (
                         variant="determinate"
                         value={(timeLeft / 10) * 100}
                         size={150}
-                        style={{ color: timeLeft <= 0 ? '#d32f2f' : '#41669d' }}
+                        style={{ color: timeLeft <= 0 ? '#e1f5fe' : '#b3e5fc' }}
 
                     />
                     <Box
