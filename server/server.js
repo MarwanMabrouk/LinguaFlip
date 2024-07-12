@@ -27,7 +27,7 @@ app.use("/api/services",translateRoutes);
 mongoose.connect(process.env.ATLAS_URI)
   .then(() =>{
       // start the Express server
-      app.listen(process.env.PORT, () => {
+      app.listen(process.env.PORT,"0.0.0.0", () => {
       console.log(`Server listening on port ${process.env.PORT}`);
 });
   })
