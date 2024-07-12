@@ -25,10 +25,10 @@ const App = () => {
   return (
     <div className="w-full p-6">
       <BrowserRouter>
-      <Box>
+      <Box sx={{m:2}}>
         <Navbar />
 
-        <div>
+        <Box sx={{m:1}}>
           <Routes>
           <Route 
               path="/" 
@@ -67,7 +67,7 @@ const App = () => {
             element={<AboutUs />}
             />
           </Routes>
-        </div>
+        </Box>
 
       </Box>
         
