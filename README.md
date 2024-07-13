@@ -28,6 +28,13 @@ The main features that are developed are the following:
 - Translation feature with DeepL API
 - Expand card lists by using ChatGPT API
 
+## Tech Stack
+
+
+**Frontend :** React, MaterialUI \
+**Backend :** ExpressJS \
+**Database :** MongoDB\
+**Deployment :** DigitalOcean
 
 
 ## Usage
@@ -51,14 +58,6 @@ Start both backend & frontend
   npm run start
 ```
 
-
-## Tech Stack
-
-
-**Frontend :** React, MaterialUI \
-**Backend :** ExpressJS \
-**Database :** MongoDB\
-**Deployment :** DigitalOcean
 
 
 
