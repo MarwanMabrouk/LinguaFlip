@@ -24,7 +24,7 @@ The main features that are developed are the following:
     <img src="assets\addCardList.png" width="384" height="201">
 - Creation of flashcards
   <p align="center">
-    <img src="assets\cardListTopic.png" width="750" height="400">
+    <img src="assets\carListTopic.png" width="750" height="400">
 - Translation feature with DeepL API
 - Expand card lists by using ChatGPT API
 
