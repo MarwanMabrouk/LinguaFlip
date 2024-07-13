@@ -16,7 +16,7 @@ Also, an AI extension is implemented in order to allow users to expand their lis
 The main features that are developed are the following:
 - Selection of languages between the 30 languages that are supported
   <p align="center">
-    <img src="assets\signup.png" width="100" height="100">
+    <img src="assets\signup.png" width="465" height="624">
 - Creation of vocabulary lists based on topic
 - Creation of flashcards
 - Translation feature with DeepL API
