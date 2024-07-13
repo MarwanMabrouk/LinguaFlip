@@ -16,8 +16,12 @@ Also, an AI extension is implemented in order to allow users to expand their lis
 The main features that are developed are the following:
 - Selection of languages between the 30 languages that are supported
   <p align="center">
-    <img src="assets\signup.png" width="650" height="300">
+    <img src="assets\signup.png" width="750" height="450">
 - Creation of vocabulary lists based on topic
+   <p align="center">
+    <img src="assets\cardlists.png" width="750" height="450">
+  <p align="center">
+    <img src="assets\addCardList.png" width="384" height="201">
 - Creation of flashcards
 - Translation feature with DeepL API
 - Expand card lists by using ChatGPT API
