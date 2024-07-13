@@ -61,7 +61,7 @@ export default function PlayCards() {
 const nextCard = () => {
     if (currentCardIndex + 1 < cards.length) {
         setCurrentCardIndex((prevIndex) => prevIndex + 1);
-        setTimeLeft(10);
+        setTimeLeft(30);
         setInputText('');
         setFeedbackMessage('');
         setShowFeedback(false);
