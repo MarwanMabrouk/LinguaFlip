@@ -16,7 +16,7 @@ export default function PlayCards() {
     const {id}=useParams();
     const {user}=useAuthContext();
     const [currentCardIndex, setCurrentCardIndex] = useState(0);
-    const [timeLeft, setTimeLeft] = useState(10); // initial time in seconds
+    const [timeLeft, setTimeLeft] = useState(30); // initial time in seconds
     const [score, setScore] = useState(0);
     const [inputText, setInputText] = useState('');
     const [showScore, setShowScore] = useState(false);
@@ -165,7 +165,7 @@ return (
                 <Box position="relative" display="inline-flex">
                     <CircularProgress
                         variant="determinate"
-                        value={(timeLeft / 10) * 100}
+                        value={(timeLeft / 30) * 100}
                         size={150}
                         style={{ color: timeLeft <= 0 ? '#e1f5fe' : '#b3e5fc' }}
 
