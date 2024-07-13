@@ -29,7 +29,7 @@ The main features that are developed are the following:
 - Expand card lists by using ChatGPT API
 
 ## Tech Stack
-For the developing the application the MERN Stack has been u
+For developing the application the MERN Stack has been used:
 
 **Frontend :** React, MaterialUI \
 **Backend :** ExpressJS \
