@@ -19,7 +19,7 @@ The main features that are developed are the following:
     <img src="assets\signup.png" width="750" height="450">
 - Creation of vocabulary lists based on topic
    <p align="center">
-    <img src="assets\cardlists.png" width="750" height="450">
+    <img src="assets\cardlists.png" width="750" height="500">
   <p align="center">
     <img src="assets\addCardList.png" width="384" height="201">
 - Creation of flashcards
