@@ -1,5 +1,6 @@
 import {  useEffect, useState } from "react";
 import * as React from 'react';
+import Message from './Message';
 import { Grid, Typography, Box, Card,CardActions,CardContent,Button } from "@mui/material";
 import { useAuthContext } from "../hooks/useAuthContext";
 import { useNavigate } from "react-router-dom";
@@ -14,6 +15,8 @@ export default function CardLists() {
     const userTargetLanguage = user.foreignLanguage;
     const navigate=useNavigate();
     const [open, setOpen] = useState(false);
+    const [message, setMessage] = useState(null);
+    const [isSuccess, setIsSuccess] = useState(null);
 
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
@@ -76,7 +79,38 @@ export default function CardLists() {
             console.log('Error writing element to database',error)
         }
     }
-    
+
+    const handleExpandCardList= async(id)=>{
+        console.log("Expanding Card List");
+        try{
+            const response = await fetch(`http://localhost:5050/api/cardLists/${id}/expandCardList`, {
+                method:'POST',
+                headers:
+                {   
+                    'Content-Type': 'application/json',
+                    'authorization':user.token
+                },
+                
+            })  
+            ;
+            if (response.status === 200) {
+            await new Promise((resolve) => setTimeout(resolve, 1000));
+            setMessage('Card list was expanded successfully');
+            setIsSuccess(true);
+            } 
+            fetchCardLists();
+        }
+        catch(error)
+        {
+            setMessage(error.response ? error.response.data : 'An error occurred');
+            setIsSuccess(false);
+        }
+    }
+
+    const handleCloseMessage = () => {
+        setMessage('');
+    };
+
     useEffect(()=>{
         fetchCardLists();
     },[]);
@@ -122,7 +156,7 @@ export default function CardLists() {
                   Show Cards
             </Button>
             <Button sx={{color:'primary.dark', borderColor: 'primary.dark'}} size="small" variant="outlined" 
-                    >
+                    onClick={()=>handleExpandCardList(cardList._id)}>
                   Expand using AI  ✨
             </Button>
           </CardActions>
@@ -131,6 +165,10 @@ export default function CardLists() {
         </Box>  
       </Grid>
     ))}
+
+{message && (
+                <Message message={message} isSuccess={isSuccess} onClose={handleCloseMessage} />
+            )}
 </Grid>
         </div>
     );

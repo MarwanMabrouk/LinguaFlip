@@ -3,6 +3,7 @@ import {userSchema} from '../models/userModel.js';
 import { cardListSchema } from '../models/cardListModel.js';
 import { cardSchema } from '../models/cardModel.js';
 import { translateText } from './translateController.js';
+import { getOpenAIResponse } from './utils/gpt-expansion.js';
 
 const User = mongoose.model('User', userSchema);
 const CardList = mongoose.model('cardList', cardListSchema);
@@ -11,14 +12,14 @@ const Card=mongoose.model('card',cardSchema);
 
 
 export const fetchUserCardLists= async (req,res)=>{
-    console.log(req.user)
+
     try{
         const user_id =req.user;
-        console.log(user_id);
+       
         const user= await User.findOne({"_id":user_id}).
                          populate('cardLists').
                          exec(); 
-        console.log(user.cardLists);
+      
         res.status(200).json(user.cardLists);
     }catch(error){
         res.status(400).json({error: error.message});
@@ -82,5 +83,54 @@ export const postCardList= async(req,res)=>{
     }       
     catch(error){
         res.status(400).json({error: error.message});
+    }
+}
+
+export const expandCardListAI= async (req,res)=>{
+    try{
+        const cardList_id=req.params.id
+        const user_id=req.params.user
+        console.log("expanding card list")
+        const cardList= await CardList.findOne({"_id":cardList_id}).
+                         populate('cards').
+                         exec();
+        console.log(cardList);
+        const user=await User.findOne({"_id":user_id}).
+                         exec();
+        /* if(!user.apiCount)
+            {
+                user={
+                    ...prevUser,
+                    apiCount:0
+                }
+            }
+        if(user.apiCount<10)
+            {   
+                user.apiCount=user.apiCount+1
+            }
+        else{
+            throw Error("Number of allowed Api calls exceeded")
+        } */
+        const newCards=await getOpenAIResponse(cardList.cards)
+        const insertedCards=[]
+        for (const card in newCards)
+            {
+        
+            const current_card=new Card(newCards[card])
+            const savedCard=await current_card.save()
+            insertedCards.push(savedCard._id)
+                }
+            
+        console.log(insertedCards)     
+        cardList.cards=[...insertedCards,...cardList.cards]
+        //console.log(user)
+        console.log(cardList)
+        //await user.save()
+        await cardList.save()
+        res.status(200).send('Card List expanded successfully')
+    }
+    catch(error){
+        console.log(error)
+        res.status(400).send(error)
     }
 }

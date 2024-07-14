@@ -32,6 +32,15 @@
   "dependencies": {
   
     
+  "body-parser": "^1.20.2",
+  
+    
+  "langchain": "^0.2.9",
+  
+    
+  "openai": "^4.52.7",
+  
+    
   "rimraf": "^5.0.8"
   
   }

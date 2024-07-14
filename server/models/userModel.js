@@ -28,6 +28,10 @@ export const userSchema = new Schema({
         type:String,
         required:true
     },
+    apiCount:{
+        type:Number,
+        required:false
+    },
     cardLists:{type: [mongoose.Schema.Types.ObjectId], ref:'cardList',required: false}
 });
 
