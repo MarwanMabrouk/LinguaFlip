@@ -42,7 +42,7 @@ export const fetchCards= async (req,res)=>{
 
 export const postCard= async(req,res)=>{
     try{
-        const targetLanguageText=await translateText(req.body.sourceLanguage);
+        const targetLanguageText=await translateText(req.body.sourceLanguage,req.sourceLanguage,req.body.targetLanguage);
         console.log(targetLanguageText);
         const cardList_id=req.params.id;
     
