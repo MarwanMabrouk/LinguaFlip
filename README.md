@@ -3,7 +3,12 @@
 LinguaFlip helps you elevate your language learning with interactive flashcards, AI-driven word recommendations. 
 
 <p align="center">
-  <img src="assets\LinguaFlip.png" alt="Logo" width="100" height="100">
+  <img src="assets\LinguaFlip.png" alt="Logo" width="200" height="200">
+
+<p align="center">  
+  <a href="https://linguaflip.app/">
+   Deployed Website - https://linguaflip.app/
+  </a>
 
 ## Short Description
 LinguaFlip is a web application whose main purpose is improving vocabulary skills when leraning a new language by creating list of words related to a topic. 
@@ -48,7 +53,7 @@ Clone the project
 Install dependencies
 
 ```bash
-  npm Install
+  npm install
 ```
 
 
@@ -58,7 +63,9 @@ Start both backend & frontend
   npm run start
 ```
 
+## Environment Variables
 
+You need to copy the config.env file to inside of server directory before starting the project
 
 
 ## Authors
