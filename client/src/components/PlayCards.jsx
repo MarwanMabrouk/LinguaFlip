@@ -42,7 +42,7 @@ export default function PlayCards() {
     try {
       console.log(id);
       const response = await fetch(
-        `http://localhost:5050/api/cardLists/${id}`,
+        `${import.meta.env.VITE_API_URL}/api/cardLists/${id}`,
         {
           method: "GET",
           headers: {

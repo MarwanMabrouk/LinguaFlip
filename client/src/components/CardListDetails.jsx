@@ -35,7 +35,7 @@ export default function CardList() {
     try {
       console.log(id);
       const response = await fetch(
-        `http://localhost:5050/api/cardLists/${id}`,
+        `${import.meta.env.VITE_API_URL}/api/cardLists/${id}`,
         {
           method: "GET",
           headers: {
@@ -56,7 +56,7 @@ export default function CardList() {
         text: newCard.sourceLanguage,
       };
       const response = await fetch(
-        `http://localhost:5050/api/services/translate`,
+        `${import.meta.env.VITE_API_URL}/api/services/translate`,
         {
           method: "POST",
           headers: {
@@ -74,7 +74,7 @@ export default function CardList() {
 
     try {
       const response = await fetch(
-        `http://localhost:5050/api/cardLists/${id}`,
+        `${import.meta.env.VITE_API_URL}/api/cardLists/${id}`,
         {
           method: "POST",
           headers: {

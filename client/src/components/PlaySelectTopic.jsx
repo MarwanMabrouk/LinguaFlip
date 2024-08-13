@@ -24,7 +24,7 @@ export default function PlaySelectTopic() {
   const fetchCardLists = async () => {
     try {
       console.log(user);
-      const response = await fetch("http://localhost:5050/api/cardLists", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/cardLists`, {
         method: "GET",
         headers: {
           authorization: user.token,

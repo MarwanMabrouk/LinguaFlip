@@ -43,7 +43,7 @@ export default function CardLists() {
   const fetchCardLists = async () => {
     try {
       console.log(user);
-      const response = await fetch("http://localhost:5050/api/cardLists", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/cardLists`, {
         method: "GET",
         headers: {
           authorization: user.token,
@@ -63,7 +63,7 @@ export default function CardLists() {
   const handleAddCardList = async (newCardList) => {
     console.log("New card list added");
     try {
-      const response = await fetch(`http://localhost:5050/api/cardLists`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/cardLists`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -81,7 +81,7 @@ export default function CardLists() {
     console.log("Expanding Card List");
     try {
       const response = await fetch(
-        `http://localhost:5050/api/cardLists/${id}/expandCardList`,
+        `${import.meta.env.VITE_API_URL}/api/cardLists/${id}/expandCardList`,
         {
           method: "POST",
           headers: {

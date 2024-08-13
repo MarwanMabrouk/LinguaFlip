@@ -10,7 +10,7 @@ export const useSignup = () => {
     setIsLoading(true);
     setError(null);
 
-    const response = await fetch("http://localhost:5050/api/user/signup", {
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/api/user/signup`, {
       // i am not sure if the parameter is correct
 
       method: "POST",
