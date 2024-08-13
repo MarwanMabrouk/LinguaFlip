@@ -1,6 +1,5 @@
 import express from "express";
 import cors from "cors";
-//import records from "./routes/record.js";
 import "dotenv/config";
 import mongoose from "mongoose";
 
@@ -8,10 +7,9 @@ import { userRoutes } from "./routes/user.js";
 import { cardListsRoutes } from "./routes/cardLists.js";
 import https from "https";
 import fs from "fs";
-// const PORT = process.env.PORT || 5050;
+
 const app = express();
 
-//routes
 app.use(cors());
 app.use(express.json());
 app.use((req, res, next) => {
@@ -19,7 +17,7 @@ app.use((req, res, next) => {
   next();
 });
 
-//app.use("/record", records);
+//routes
 app.use("/api/user", userRoutes);
 app.use("/api/cardLists", cardListsRoutes);
 
