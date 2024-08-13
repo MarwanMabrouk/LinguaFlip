@@ -11,7 +11,6 @@ import { Box } from "@mui/material";
 import Profile from "./components/Profile";
 import PlaySelectTopic from "./components/PlaySelectTopic";
 import PlayCards from "./components/PlayCards";
-import { AboutUs } from "./components/AboutUs";
 
 const App = () => {
   const { user } = useAuthContext();
@@ -40,7 +39,6 @@ const App = () => {
               <Route path="/profile" element={<Profile />} />
               <Route path="/play" element={<PlaySelectTopic />} />
               <Route path="/play/:id" element={<PlayCards />} />
-              <Route path="/AboutUs" element={<AboutUs />} />
             </Routes>
           </Box>
         </Box>

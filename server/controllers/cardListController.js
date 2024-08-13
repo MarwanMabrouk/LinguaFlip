@@ -97,20 +97,6 @@ export const expandCardListAI= async (req,res)=>{
         console.log(cardList);
         const user=await User.findOne({"_id":user_id}).
                          exec();
-        /* if(!user.apiCount)
-            {
-                user={
-                    ...prevUser,
-                    apiCount:0
-                }
-            }
-        if(user.apiCount<10)
-            {   
-                user.apiCount=user.apiCount+1
-            }
-        else{
-            throw Error("Number of allowed Api calls exceeded")
-        } */
         const newCards=await getOpenAIResponse(cardList.cards)
         const insertedCards=[]
         for (const card in newCards)
