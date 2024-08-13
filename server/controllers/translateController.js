@@ -18,7 +18,7 @@ export const translateText=async (sourceLanguageText,nativeLanguage,foreignLangu
         let sourceLanguage = newDocument.nativeLanguage;
         let targetLanguage = newDocument.foreignLanguage;
 
-        let result = await translator.translateText(newDocument.text, "EN", targetLanguages[targetLanguage]); 
+        let result = await translator.translateText(newDocument.text, null, targetLanguages[targetLanguage]); 
         //res.send(result).status(200);
         return result.text
     }

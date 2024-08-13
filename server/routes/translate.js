@@ -28,7 +28,7 @@ async function translateText(req, res) {
         console.log("Mapping is ", sourceLanguages[sourceLanguage], targetLanguages[targetLanguage]);
         //TODO: convert sourceLanguage and targetLanguage to deepl language codes
         //https://developers.deepl.com/docs/resources/supported-languages#target-languages
-        let result = await translator.translateText(newDocument.text, "EN", "DE"); 
+        let result = await translator.translateText(newDocument.text, null, "DE"); 
         res.send(result).status(200);
     }
     catch (err) {
