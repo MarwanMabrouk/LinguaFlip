@@ -1,19 +1,15 @@
-import {useAuthContext} from './useAuthContext'
+import { useAuthContext } from "./useAuthContext";
 
-export const useLogout = () =>{
+export const useLogout = () => {
+  const { dispatch } = useAuthContext();
 
-    const {dispatch} = useAuthContext();
+  const logout = () => {
+    // we don't have to send a request to the backend
 
+    localStorage.removeItem("user");
 
-    const logout =()=>{ // we don't have to send a request to the backend
-        // remove user form storage
+    dispatch({ type: "LOGOUT" });
+  };
 
-        localStorage.removeItem('user');
-        
-        // dispatch logout action
-        dispatch ({type:'LOGOUT'});
-
-    }
-
-    return {logout}
-}
+  return { logout };
+};
