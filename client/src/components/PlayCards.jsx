@@ -16,7 +16,7 @@ export default function PlayCards() {
   const { id } = useParams();
   const { user } = useAuthContext();
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
-  const [timeLeft, setTimeLeft] = useState(30); 
+  const [timeLeft, setTimeLeft] = useState(30);
   const [score, setScore] = useState(0);
   const [inputText, setInputText] = useState("");
   const [showScore, setShowScore] = useState(false);
@@ -48,7 +48,7 @@ export default function PlayCards() {
           headers: {
             authorization: user.token,
           },
-        }
+        },
       );
       const jsonResponse = await response.json();
       setCards(jsonResponse);

@@ -41,7 +41,7 @@ export default function CardList() {
           headers: {
             authorization: user.token,
           },
-        }
+        },
       );
       const jsonResponse = await response.json();
       setCards(jsonResponse);
@@ -64,7 +64,7 @@ export default function CardList() {
             authorization: user.token,
           },
           body: JSON.stringify(request),
-        }
+        },
       );
       const jsonResponse = await response.json();
       console.log("Translate ***", jsonResponse);
@@ -82,7 +82,7 @@ export default function CardList() {
             authorization: user.token,
           },
           body: JSON.stringify(newCard),
-        }
+        },
       );
 
       const jsonResponse = await response.json();
@@ -97,7 +97,7 @@ export default function CardList() {
   };
 
   const shuffleArray = (array) => {
-    let shuffledArray = array.slice(); 
+    let shuffledArray = array.slice();
     for (let i = shuffledArray.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [shuffledArray[i], shuffledArray[j]] = [

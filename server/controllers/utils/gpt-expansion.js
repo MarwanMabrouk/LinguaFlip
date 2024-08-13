@@ -1,12 +1,10 @@
-import { PromptTemplate} from "@langchain/core/prompts"
-import { ChatOpenAI } from "@langchain/openai"
-
+import { PromptTemplate } from "@langchain/core/prompts";
+import { ChatOpenAI } from "@langchain/openai";
 
 const chatModel = new ChatOpenAI({ model: "gpt-3.5-turbo" });
 
-
 const promptTemplate = new PromptTemplate({
-    template: `Given the following list of cards that translate phrases from a given source language to a given
+  template: `Given the following list of cards that translate phrases from a given source language to a given
                target language:
                {cards}
                 Generate 5 new cards as json objects of the same structure. The new cards should have
@@ -20,28 +18,28 @@ const promptTemplate = new PromptTemplate({
                     "targetLanguage": "string"
                     }}
                     `,
-    inputVariables: ["cards"],
+  inputVariables: ["cards"],
 });
 
 const chain = promptTemplate.pipe(chatModel);
 
 // Function to clean the JSON string
 function cleanJsonString(jsonString) {
-    // Remove newlines and extra spaces between JSON elements
-    return jsonString
-        .replace(/(\r\n|\n|\r)/gm, "") // Remove newlines
-        .replace(/\s\s+/g, ' ') // Replace multiple spaces with a single space
-        .trim(); // Remove leading/trailing spaces
+  // Remove newlines and extra spaces between JSON elements
+  return jsonString
+    .replace(/(\r\n|\n|\r)/gm, "") // Remove newlines
+    .replace(/\s\s+/g, " ") // Replace multiple spaces with a single space
+    .trim(); // Remove leading/trailing spaces
 }
 
 export async function getOpenAIResponse(cards) {
-    try {
-        console.log("get open ai response")
-        const response = await chain.invoke({ cards });
-        const cleanedJsonString = cleanJsonString(response.text);
-        return JSON.parse(cleanedJsonString);
-    } catch (error) {
-        console.error('Error communicating with OpenAI API:', error);
-        throw error;
-    }
+  try {
+    console.log("get open ai response");
+    const response = await chain.invoke({ cards });
+    const cleanedJsonString = cleanJsonString(response.text);
+    return JSON.parse(cleanedJsonString);
+  } catch (error) {
+    console.error("Error communicating with OpenAI API:", error);
+    throw error;
+  }
 }

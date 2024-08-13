@@ -10,18 +10,21 @@ export const useSignup = () => {
     setIsLoading(true);
     setError(null);
 
-    const response = await fetch(`${import.meta.env.VITE_API_URL}/api/user/signup`, {
-      // i am not sure if the parameter is correct
+    const response = await fetch(
+      `${import.meta.env.VITE_API_URL}/api/user/signup`,
+      {
+        // i am not sure if the parameter is correct
 
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        email,
-        password,
-        nativeLanguage,
-        foreignLanguage,
-      }), // i am not sure if it goes in brackets
-    });
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email,
+          password,
+          nativeLanguage,
+          foreignLanguage,
+        }), // i am not sure if it goes in brackets
+      },
+    );
 
     const json = await response.json();
     console.log(json);

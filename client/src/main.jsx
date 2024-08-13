@@ -20,5 +20,5 @@ root.render(
         <App />
       </AuthContextProvider>
     </ThemeProvider>
-  </React.StrictMode>
+  </React.StrictMode>,
 );

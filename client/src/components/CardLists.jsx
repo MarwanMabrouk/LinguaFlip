@@ -43,12 +43,15 @@ export default function CardLists() {
   const fetchCardLists = async () => {
     try {
       console.log(user);
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/cardLists`, {
-        method: "GET",
-        headers: {
-          authorization: user.token,
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/cardLists`,
+        {
+          method: "GET",
+          headers: {
+            authorization: user.token,
+          },
         },
-      });
+      );
       const jsonResponse = await response.json();
       setCardLists(jsonResponse);
     } catch (error) {
@@ -63,14 +66,17 @@ export default function CardLists() {
   const handleAddCardList = async (newCardList) => {
     console.log("New card list added");
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/cardLists`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          authorization: user.token,
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/cardLists`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            authorization: user.token,
+          },
+          body: JSON.stringify(newCardList),
         },
-        body: JSON.stringify(newCardList),
-      });
+      );
       fetchCardLists();
     } catch (error) {
       console.log("Error writing element to database", error);
@@ -88,7 +94,7 @@ export default function CardLists() {
             "Content-Type": "application/json",
             authorization: user.token,
           },
-        }
+        },
       );
       if (response.status === 200) {
         await new Promise((resolve) => setTimeout(resolve, 1000));

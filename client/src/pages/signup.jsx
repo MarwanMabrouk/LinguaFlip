@@ -36,7 +36,6 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await signup(email, password, nativeLanguage, foreignLanguage);
-    
   };
 
   const handleNativeChange = (event) => {
@@ -44,8 +43,8 @@ const Signup = () => {
     setNativeLanguage(value);
     setFilteredOptionsNative(
       optionsNative.filter((option) =>
-        option.toLowerCase().includes(value.toLowerCase())
-      )
+        option.toLowerCase().includes(value.toLowerCase()),
+      ),
     );
     setIsOpenNative(true);
   };
@@ -55,8 +54,8 @@ const Signup = () => {
     setForeignLanguage(value);
     setFilteredOptionsForeign(
       optionsForeign.filter((option) =>
-        option.toLowerCase().includes(value.toLowerCase())
-      )
+        option.toLowerCase().includes(value.toLowerCase()),
+      ),
     );
     setIsOpenForeign(true);
   };

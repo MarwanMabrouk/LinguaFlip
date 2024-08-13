@@ -17,7 +17,7 @@ export default function Record() {
       if (!id) return;
       setIsNew(false);
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/record/${params.id.toString()}`
+        `${import.meta.env.VITE_API_URL}/record/${params.id.toString()}`,
       );
       if (!response.ok) {
         const message = `An error has occurred: ${response.statusText}`;
@@ -56,13 +56,16 @@ export default function Record() {
           body: JSON.stringify(person),
         });
       } else {
-        response = await fetch(`${import.meta.env.VITE_API_URL}/record/${params.id}`, {
-          method: "PATCH",
-          headers: {
-            "Content-Type": "application/json",
+        response = await fetch(
+          `${import.meta.env.VITE_API_URL}/record/${params.id}`,
+          {
+            method: "PATCH",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(person),
           },
-          body: JSON.stringify(person),
-        });
+        );
       }
 
       if (!response.ok) {
