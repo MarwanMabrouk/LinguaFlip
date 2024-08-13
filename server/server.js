@@ -34,7 +34,7 @@ try{
   const httpsServer = https.createServer(credentials, app);
   server = httpsServer;
 }catch(error){
-  console.log(error);
+  /* console.log(error); */
   console.log("Failed to create https server, falling back to http");
   server = app;
 }
