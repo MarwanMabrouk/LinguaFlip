@@ -69,13 +69,6 @@ export default function PlayCards() {
       setShowScore(true);
     }
   };
-  /* const handleInputChange = (event) => {
-    setInputText(event.target.value);
-    if (event.target.value === cards[currentCardIndex].targetLanguage) {
-        setScore(score + 1);
-        nextCard();
-    }
-}; */
 
   const handleInputChange = (event) => {
     setInputText(event.target.value);
