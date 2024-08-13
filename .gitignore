@@ -153,3 +153,6 @@ psd
 thumb
 sketch
 .vscode/settings.json
+*.crt
+*.key
+
