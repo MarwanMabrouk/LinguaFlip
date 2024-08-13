@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useSignup } from "../hooks/useSignup";
 import { Button, Typography } from "@mui/material";
 import AccountCircleSharpIcon from "@mui/icons-material/AccountCircleSharp";
+
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -11,7 +12,7 @@ const Signup = () => {
 
   const [isOpenNative, setIsOpenNative] = useState(false);
   const [isOpenForeign, setIsOpenForeign] = useState(false);
-  const [optionsNative, setOptionsNative] = useState(["English", "Spanish"]);
+  const [optionsNative, setOptionsNative] = useState([]);
   const [optionsForeign, setOptionsForeign] = useState([]);
   const [filteredOptionsNative, setFilteredOptionsNative] = useState([]);
   const [filteredOptionsForeign, setFilteredOptionsForeign] = useState([]);
@@ -36,7 +37,6 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await signup(email, password, nativeLanguage, foreignLanguage);
-    
   };
 
   const handleNativeChange = (event) => {
@@ -84,8 +84,8 @@ const Signup = () => {
         <label>Email:</label>
         <input
           type="email"
-          onChange={(e) => setEmail(e.target.value)}
           value={email}
+          onChange={(e) => setEmail(e.target.value)}
           required
         />
       </div>

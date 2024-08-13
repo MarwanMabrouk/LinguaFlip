@@ -3,32 +3,30 @@ import { useAuthContext } from "./useAuthContext";
 
 export const useLogin = () => {
   const [error, setError] = useState(null);
-  const [isLoading, setIsLoading] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
   const { dispatch } = useAuthContext();
 
   const login = async (email, password) => {
     setIsLoading(true);
     setError(null);
 
-    const response = await fetch("http://localhost:5050/api/user/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, password }),
-    });
+    try {
+      const response = await fetch("http://localhost:5050/api/user/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
 
-    const json = await response.json();
-    console.log("hola useLogin backend");
+      if (!response.ok) {
+        throw new Error("Login failed");
+      }
 
-    if (!response.ok) {
-      setIsLoading(false);
-      setError(JSON.error);
-    }
-    if (response.ok) {
-      
+      const json = await response.json();
       localStorage.setItem("user", JSON.stringify(json));
-
-    
       dispatch({ type: "LOGIN", payload: json });
+    } catch (error) {
+      setError(error.message);
+    } finally {
       setIsLoading(false);
     }
   };

@@ -1,23 +1,29 @@
 import { useAuthContext } from "./hooks/useAuthContext";
-import Navbar from "./components/Navbar";
-import { Navigate, Routes, Route, BrowserRouter } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import { Box } from "@mui/material";
 
+import Navbar from "./components/Navbar";
 import Login from "./pages/login";
 import Signup from "./pages/signup";
 import Home from "./pages/home";
 import CardLists from "./components/CardLists";
 import CardListDetails from "./components/CardListDetails";
-import { Box } from "@mui/material";
 import Profile from "./components/Profile";
 import PlaySelectTopic from "./components/PlaySelectTopic";
 import PlayCards from "./components/PlayCards";
-import { AboutUs } from "./components/AboutUs";
+import AboutUs from "./components/AboutUs";
 
 const App = () => {
   const { user } = useAuthContext();
+
   return (
     <div className="w-full p-6">
-      <BrowserRouter>
+      <Router>
         <Box sx={{ m: 2 }}>
           <Navbar />
 
@@ -44,8 +50,9 @@ const App = () => {
             </Routes>
           </Box>
         </Box>
-      </BrowserRouter>
+      </Router>
     </div>
   );
 };
+
 export default App;

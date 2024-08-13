@@ -1,39 +1,36 @@
-import {createTheme} from '@mui/material/styles';
+import { createTheme } from "@mui/material/styles";
 
-
-const theme = createTheme ({
-    palette:{
-        primary:{
-            main: '#b3e5fc',
-            dark: '#0277bd',
-            light: '#e1f5fe',
-        },
-        secondary:{
-            main: '#212c6f',
-            dark: '#448aff',
-            light: '#69a1ff',
-        },
-        white:{
-            main:'#ffffff'
-        },
-        black:{
-            main:'#000000'
-        },
-        complentary:{
-            main:'#c51162',
-            light: '#f8bbd0',
-            dark:'#880e4f'
-        },
-        gray:{
-            main:'#ccc'
-        }
-
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#b3e5fc",
+      dark: "#0277bd",
+      light: "#e1f5fe",
     },
-    typography:{
-        fontFamily: "Sans-Serif",
+    secondary: {
+      main: "#212c6f",
+      dark: "#448aff",
+      light: "#69a1ff",
     },
-    spacing:8,
-    
+    white: {
+      main: "#ffffff",
+    },
+    black: {
+      main: "#000000",
+    },
+    complementary: {
+      main: "#c51162",
+      light: "#f8bbd0",
+      dark: "#880e4f",
+    },
+    gray: {
+      main: "#ccc",
+    },
+  },
+  typography: {
+    fontFamily: "Sans-Serif",
+  },
+  spacing: 8,
 });
 
 export default theme;

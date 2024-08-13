@@ -1,8 +1,8 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useLogin } from "../hooks/useLogin";
 import { Button, Typography } from "@mui/material";
-
 import AccountCircleSharpIcon from "@mui/icons-material/AccountCircleSharp";
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -27,19 +27,23 @@ const Login = () => {
           Log in to your account
         </Typography>
       </div>
+
       <div>
-        <label>Email:</label>
+        <label htmlFor="email">Email:</label>
         <input
           type="email"
+          id="email"
           onChange={(e) => setEmail(e.target.value)}
           value={email}
           required
         />
       </div>
+
       <div>
-        <label>Password:</label>
+        <label htmlFor="password">Password:</label>
         <input
           type="password"
+          id="password"
           onChange={(e) => setPassword(e.target.value)}
           value={password}
           required
@@ -54,6 +58,7 @@ const Login = () => {
       >
         Login
       </Button>
+
       {error && <div className="error">{error}</div>}
     </form>
   );
