@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import { userSchema } from "../models/userModel.js";
 import { cardListSchema } from "../models/cardListModel.js";
 import { cardSchema } from "../models/cardModel.js";
-import { translateText } from "./translateController.js";
+import { translateText } from "./utils/translate.js";
 import { getOpenAIResponse } from "./utils/gpt-expansion.js";
 
 const User = mongoose.model("User", userSchema);

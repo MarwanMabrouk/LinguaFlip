@@ -5,7 +5,6 @@ import "dotenv/config";
 import mongoose from "mongoose";
 
 import { userRoutes } from "./routes/user.js";
-import { translateRoutes } from "./routes/translate.js";
 import { cardListsRoutes } from "./routes/cardLists.js";
 import https from "https";
 import fs from "fs";
@@ -23,7 +22,7 @@ app.use((req, res, next) => {
 //app.use("/record", records);
 app.use("/api/user", userRoutes);
 app.use("/api/cardLists", cardListsRoutes);
-app.use("/api/services", translateRoutes);
+
 let server;
 try {
   const privateKey = fs.readFileSync(process.env.KEY_PATH, "utf8");

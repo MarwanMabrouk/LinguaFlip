@@ -51,26 +51,6 @@ export default function CardList() {
   };
   const handleAddCard = async (newCard) => {
     console.log("New card added", newCard);
-    try {
-      const request = {
-        text: newCard.sourceLanguage,
-      };
-      const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/api/services/translate`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            authorization: user.token,
-          },
-          body: JSON.stringify(request),
-        },
-      );
-      const jsonResponse = await response.json();
-      console.log("Translate ***", jsonResponse);
-    } catch (error) {
-      console.error("Error translating:", error);
-    }
 
     try {
       const response = await fetch(
