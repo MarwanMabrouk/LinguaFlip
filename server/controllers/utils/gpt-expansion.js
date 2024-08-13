@@ -12,11 +12,10 @@ const promptTemplate = new PromptTemplate({
                 words . 
                 Remember return your response as a javascript list of 5 cards of similar json format as the input
                 and use the same target and source languages. The json objects should have the following structure:
-               {{
-                    "title": "string",
+               {{   "title": "string",
                     "sourceLanguage": "string",
-                    "targetLanguage": "string"
-                    }}
+                    "targetLanguage": "string"}}
+                Given that the title and the sourceLanguage attributes are the same thing. Do NOT put a trailing comma after the targetLanguage value
                     `,
   inputVariables: ["cards"],
 });
@@ -36,6 +35,7 @@ export async function getOpenAIResponse(cards) {
   try {
     console.log("get open ai response");
     const response = await chain.invoke({ cards });
+    console.log('response',response.text)
     const cleanedJsonString = cleanJsonString(response.text);
     return JSON.parse(cleanedJsonString);
   } catch (error) {

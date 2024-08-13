@@ -21,7 +21,7 @@ const Message = ({ message, isSuccess, onClose }) => {
         padding: "10px 20px",
         borderRadius: "5px",
         color: "#fff",
-        backgroundColor: isSuccess ? "green" : "red",
+        backgroundColor: isSuccess ? "green" : "yellow",
         zIndex: 1000,
       }}
     >

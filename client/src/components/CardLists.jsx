@@ -86,6 +86,7 @@ export default function CardLists() {
   const handleExpandCardList = async (id) => {
     console.log("Expanding Card List");
     try {
+      setMessage("Expanding Card list")
       const response = await fetch(
         `${import.meta.env.VITE_API_URL}/api/cardLists/${id}/expandCardList`,
         {

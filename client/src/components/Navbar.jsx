@@ -44,14 +44,6 @@ export default function Navbar() {
               {/*  <Link to="/AboutUs">About the Project</Link> */}
             </div>
           )}
-          {/* {!user && (
-            <div className="nav-links">
-              <Link to="/">Home</Link>
-              <Link to="/AboutUs">About the Project</Link>
-            </div>
-          )} */}
-
-          {/* <div className="flex-grow"></div>  */}
 
           {user && ( // when the user is login show this
             <div className="nav-links">
