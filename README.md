@@ -10,7 +10,7 @@ LinguaFlip helps you elevate your language learning with interactive flashcards,
    Deployed Website - https://linguaflip.app/
   </a>
 
-## Short Description
+## Description
 
 LinguaFlip is a web application whose main purpose is improving vocabulary skills when leraning a new language by creating list of words related to a topic.
 
@@ -51,6 +51,7 @@ Clone the project
 
 ```bash
   git clone https://github.com/MarwanMabrouk/LinguaFlip.git
+  cd LinguaFlip
 ```
 
 Install dependencies
@@ -67,8 +68,28 @@ Start both backend & frontend
 
 ## Environment Variables
 
-You need to copy the config.env file to inside of server directory before starting the project
+### Use provided Secret Keys
+1. You need to copy the config.env file to inside of server directory 
+2. You need to copy the .env file to inside of client directory
 
+### Create your own Secret Keys
+
+inside the server directory create a file called config.env and add the following:
+
+```bash
+  PORT=5050
+  ATLAS_URI=your_mongo_uri
+  SECRET=your_jwt_secret
+  DEEPL_API_KEY=your_deepl_api_key
+  DEEPL_ENDPOINT=your_deepl_endpoint
+  OPENAI_API_KEY=your_openai_api_key
+```
+
+inside the client directory create a file called .env and add the following:
+
+```bash
+  VITE_API_URL=http://localhost:5050
+```
 ## Authors
 
 - [@smarrod02](https://github.com/smarrod02)
