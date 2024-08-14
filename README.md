@@ -24,10 +24,10 @@ The main features that are developed are the following:
 
 - Selection of languages between the 30 languages that are supported
   <p align="center">
-    <img src="assets\signup.png" width="750" height="450">
+    <img src="assets\signup.png" >
 - Creation of vocabulary lists based on topic
    <p align="center">
-    <img src="assets\cardLists.png" width="750" height="500">
+    <img src="assets\cardLists.png" >
   <p align="center">
     <img src="assets\addCardList.png" width="384" height="201">
 - Creation of flashcards
