@@ -92,6 +92,13 @@ inside the client directory create a file called .env and add the following:
 ```
 ## Authors
 
+
+
+ <p align="center">
+  WebTech Wizards Team
+ <p align="center"> 
+  <img src="assets\Team_logo.jpg" alt="Logo" width="200" height="200"> 
+
 - [@smarrod02](https://github.com/smarrod02)
 - [@mohabdelmagied](https://github.com/mohabdelmagied)
 - [@MarwanMabrouk](https://github.com/MarwanMabrouk)
